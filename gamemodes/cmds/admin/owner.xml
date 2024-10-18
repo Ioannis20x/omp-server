@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet href="file:///C|/Users/ioann/OneDrive/Projekte/mein SAMP Server/openmp version(normal)/qawno/xml/pawndoc.xsl" type="text/xsl"?>
+<doc source="C:\Users\ioann\OneDrive\Projekte\mein SAMP Server\openmp version(normal)\gamemodes\cmds\admin\owner.pwn">
+	<assembly>
+		<name>owner.pwn</name>
+	</assembly>
+	<members>
+
+		<!-- enumerations -->
+
+		<!-- constants -->
+		<member name="C:false" value="0">
+			<tagname value="bool"/>
+			<referrer name="set"/>
+		</member>
+		<member name="C:true" value="1">
+			<tagname value="bool"/>
+			<referrer name="netstat"/>
+		</member>
+
+		<!-- variables -->
+		<member name="F:__date">
+		</member>
+		<member name="F:__file">
+		</member>
+		<member name="F:__time">
+		</member>
+
+		<!-- functions -->
+		<member name="M:AddVehicleComponent" syntax="AddVehicleComponent()">
+			<stacksize value="1"/>
+			<referrer name="setnitro"/>
+		</member>
+		<member name="M:DestroyVehicle" syntax="DestroyVehicle()">
+			<stacksize value="1"/>
+			<referrer name="delallveh"/>
+			<referrer name="reloadxmas"/>
+		</member>
+		<member name="M:GameTextForAll" syntax="GameTextForAll()">
+			<stacksize value="1"/>
+			<referrer name="stopserver"/>
+		</member>
+		<member name="M:GetPlayerPos" syntax="GetPlayerPos()">
+			<stacksize value="1"/>
+			<referrer name="createfrakcar"/>
+		</member>
+		<member name="M:GetPlayerScore" syntax="GetPlayerScore()">
+			<stacksize value="1"/>
+			<referrer name="givelevel"/>
+		</member>
+		<member name="M:GivePlayerMoney" syntax="GivePlayerMoney()">
+			<stacksize value="1"/>
+			<referrer name="givemoney"/>
+		</member>
+		<member name="M:GivePlayerWeapon" syntax="GivePlayerWeapon()">
+			<stacksize value="1"/>
+			<referrer name="minigun"/>
+		</member>
+		<member name="M:IsValidVehicle" syntax="IsValidVehicle()">
+			<stacksize value="1"/>
+			<referrer name="delallveh"/>
+			<referrer name="reloadxmas"/>
+		</member>
+		<member name="M:NetStatsDisplay" syntax="NetStatsDisplay()">
+			<stacksize value="1"/>
+			<referrer name="netstat"/>
+		</member>
+		<member name="M:SEM" syntax="SEM()">
+			<stacksize value="1"/>
+			<referrer name="delallveh"/>
+			<referrer name="reloadxmas"/>
+			<referrer name="fakeme"/>
+		</member>
+		<member name="M:SendAdminMessage" syntax="SendAdminMessage()">
+			<stacksize value="1"/>
+			<referrer name="fakeme"/>
+		</member>
+		<member name="M:SendClientMessage" syntax="SendClientMessage()">
+			<stacksize value="1"/>
+			<referrer name="fakeme"/>
+			<referrer name="set"/>
+			<referrer name="createfrakcar"/>
+			<referrer name="setnitro"/>
+			<referrer name="saduty"/>
+			<referrer name="makeadmin"/>
+			<referrer name="givelevel"/>
+			<referrer name="stopserver"/>
+			<referrer name="setfstat"/>
+			<referrer name="gmx"/>
+		</member>
+		<member name="M:SendClientMessageToAll" syntax="SendClientMessageToAll()">
+			<stacksize value="1"/>
+			<referrer name="stopserver"/>
+		</member>
+		<member name="M:SendRconCommand" syntax="SendRconCommand()">
+			<stacksize value="1"/>
+			<referrer name="reloadxmas"/>
+			<referrer name="stopserver"/>
+			<referrer name="gmx"/>
+		</member>
+		<member name="M:SendTeamMessage" syntax="SendTeamMessage()">
+			<stacksize value="1"/>
+			<referrer name="minigun"/>
+		</member>
+		<member name="M:SetPVarInt" syntax="SetPVarInt()">
+			<stacksize value="1"/>
+			<referrer name="saduty"/>
+		</member>
+		<member name="M:SetPlayerName" syntax="SetPlayerName()">
+			<stacksize value="1"/>
+			<referrer name="fakeme"/>
+		</member>
+		<member name="M:SetPlayerScore" syntax="SetPlayerScore()">
+			<stacksize value="1"/>
+			<referrer name="givelevel"/>
+		</member>
+		<member name="M:SetTimer" syntax="SetTimer()">
+			<stacksize value="1"/>
+			<referrer name="netstat"/>
+		</member>
+		<member name="M:ShowPlayerDialog" syntax="ShowPlayerDialog()">
+			<stacksize value="1"/>
+			<referrer name="selectaduty"/>
+		</member>
+		<member name="M:TextDrawHideForPlayer" syntax="TextDrawHideForPlayer()">
+			<stacksize value="1"/>
+			<referrer name="saduty"/>
+		</member>
+		<member name="M:TextDrawShowForPlayer" syntax="TextDrawShowForPlayer()">
+			<stacksize value="1"/>
+			<referrer name="saduty"/>
+		</member>
+		<member name="M:WPM" syntax="WPM()">
+			<stacksize value="1"/>
+			<referrer name="setnitro"/>
+			<referrer name="makeadmin"/>
+			<referrer name="givelevel"/>
+			<referrer name="givemoney"/>
+		</member>
+		<member name="M:createfCar" syntax="createfCar()">
+			<stacksize value="1"/>
+			<referrer name="createfrakcar"/>
+		</member>
+		<member name="M:createfrakcar" syntax="createfrakcar(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="17"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="createfCar"/>
+			<dependency name="isAdmin"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:delallveh" syntax="delallveh(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="5"/>
+			<dependency name="DestroyVehicle"/>
+			<dependency name="IsValidVehicle"/>
+			<dependency name="SEM"/>
+			<dependency name="isAdmin"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:fakeme" syntax="fakeme(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="264"/>
+			<dependency name="SEM"/>
+			<dependency name="SendAdminMessage"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetPlayerName"/>
+			<dependency name="format"/>
+			<dependency name="getPlayerName"/>
+			<dependency name="isAdmin"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:format" syntax="format()">
+			<stacksize value="1"/>
+			<referrer name="fakeme"/>
+			<referrer name="set"/>
+			<referrer name="minigun"/>
+		</member>
+		<member name="M:getPlayerName" syntax="getPlayerName()">
+			<stacksize value="1"/>
+			<referrer name="fakeme"/>
+			<referrer name="set"/>
+			<referrer name="minigun"/>
+		</member>
+		<member name="M:givelevel" syntax="givelevel(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="7"/>
+			<dependency name="GetPlayerScore"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetPlayerScore"/>
+			<dependency name="WPM"/>
+			<dependency name="isAdmin"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:givemoney" syntax="givemoney(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="9"/>
+			<dependency name="GivePlayerMoney"/>
+			<dependency name="WPM"/>
+			<dependency name="isAdmin"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:gmx" syntax="gmx(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="6"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SendRconCommand"/>
+			<dependency name="isAdmin"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:isAdmin" syntax="isAdmin()">
+			<stacksize value="1"/>
+			<referrer name="delallveh"/>
+			<referrer name="reloadxmas"/>
+			<referrer name="fakeme"/>
+			<referrer name="set"/>
+			<referrer name="createfrakcar"/>
+			<referrer name="setnitro"/>
+			<referrer name="makeadmin"/>
+			<referrer name="givelevel"/>
+			<referrer name="stopserver"/>
+			<referrer name="minigun"/>
+			<referrer name="givemoney"/>
+			<referrer name="netstat"/>
+			<referrer name="setfstat"/>
+			<referrer name="gmx"/>
+		</member>
+		<member name="M:isAlevel" syntax="isAlevel()">
+			<stacksize value="1"/>
+			<referrer name="selectaduty"/>
+		</member>
+		<member name="M:isaduty" syntax="isaduty()">
+			<stacksize value="1"/>
+			<referrer name="set"/>
+			<referrer name="saduty"/>
+		</member>
+		<member name="M:makeadmin" syntax="makeadmin(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="9"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="WPM"/>
+			<dependency name="isAdmin"/>
+			<dependency name="savePlayer"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:minigun" syntax="minigun(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="263"/>
+			<dependency name="GivePlayerWeapon"/>
+			<dependency name="SendTeamMessage"/>
+			<dependency name="format"/>
+			<dependency name="getPlayerName"/>
+			<dependency name="isAdmin"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:netstat" syntax="netstat(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="6"/>
+			<dependency name="NetStatsDisplay"/>
+			<dependency name="SetTimer"/>
+			<dependency name="isAdmin"/>
+			<dependency name="true"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:reloadxmas" syntax="reloadxmas(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="5"/>
+			<dependency name="DestroyVehicle"/>
+			<dependency name="IsValidVehicle"/>
+			<dependency name="SEM"/>
+			<dependency name="SendRconCommand"/>
+			<dependency name="isAdmin"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:saduty" syntax="saduty(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="6"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetPVarInt"/>
+			<dependency name="TextDrawHideForPlayer"/>
+			<dependency name="TextDrawShowForPlayer"/>
+			<dependency name="isaduty"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:savePlayer" syntax="savePlayer()">
+			<stacksize value="1"/>
+			<referrer name="makeadmin"/>
+		</member>
+		<member name="M:selectaduty" syntax="selectaduty(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="10"/>
+			<dependency name="ShowPlayerDialog"/>
+			<dependency name="isAlevel"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:set" syntax="set(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="533"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="false"/>
+			<dependency name="format"/>
+			<dependency name="getPlayerName"/>
+			<dependency name="isAdmin"/>
+			<dependency name="isaduty"/>
+			<dependency name="sscanf"/>
+			<dependency name="strcmp"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:setfstat" syntax="setfstat(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="7"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="isAdmin"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:setnitro" syntax="setnitro(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="7"/>
+			<dependency name="AddVehicleComponent"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="WPM"/>
+			<dependency name="isAdmin"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:sscanf" syntax="sscanf()">
+			<stacksize value="1"/>
+			<referrer name="fakeme"/>
+			<referrer name="set"/>
+			<referrer name="createfrakcar"/>
+			<referrer name="setnitro"/>
+			<referrer name="makeadmin"/>
+			<referrer name="givelevel"/>
+			<referrer name="givemoney"/>
+			<referrer name="setfstat"/>
+		</member>
+		<member name="M:stopserver" syntax="stopserver(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="6"/>
+			<dependency name="GameTextForAll"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SendClientMessageToAll"/>
+			<dependency name="SendRconCommand"/>
+			<dependency name="isAdmin"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:strcmp" syntax="strcmp()">
+			<stacksize value="1"/>
+			<referrer name="set"/>
+		</member>
+
+	</members>
+</doc>

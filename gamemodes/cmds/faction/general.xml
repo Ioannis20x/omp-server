@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet href="file:///C|/Users/ioann/OneDrive/Projekte/mein SAMP Server/openmp version(normal)/qawno/xml/pawndoc.xsl" type="text/xsl"?>
+<doc source="C:\Users\ioann\OneDrive\Projekte\mein SAMP Server\openmp version(normal)\gamemodes\cmds\faction\general.pwn">
+	<assembly>
+		<name>general.pwn</name>
+	</assembly>
+	<members>
+
+		<!-- enumerations -->
+
+		<!-- constants -->
+
+		<!-- variables -->
+		<member name="F:__date">
+		</member>
+		<member name="F:__file">
+		</member>
+		<member name="F:__time">
+		</member>
+
+		<!-- functions -->
+		<member name="M:GetObjectPos" syntax="GetObjectPos()">
+			<stacksize value="1"/>
+			<referrer name="mv"/>
+		</member>
+		<member name="M:GetObjectRot" syntax="GetObjectRot()">
+			<stacksize value="1"/>
+			<referrer name="mv"/>
+		</member>
+		<member name="M:GetPVarInt" syntax="GetPVarInt()">
+			<stacksize value="1"/>
+			<referrer name="duty"/>
+			<referrer name="suspend"/>
+		</member>
+		<member name="M:GivePlayerWeapon" syntax="GivePlayerWeapon()">
+			<stacksize value="1"/>
+			<referrer name="equip"/>
+		</member>
+		<member name="M:IsPlayerConnected" syntax="IsPlayerConnected()">
+			<stacksize value="1"/>
+			<referrer name="f"/>
+			<referrer name="d"/>
+			<referrer name="r"/>
+		</member>
+		<member name="M:IsPlayerInRangeOfPoint" syntax="IsPlayerInRangeOfPoint()">
+			<stacksize value="1"/>
+			<referrer name="duty"/>
+			<referrer name="mv"/>
+			<referrer name="equip"/>
+		</member>
+		<member name="M:MoveObject" syntax="MoveObject()">
+			<stacksize value="1"/>
+			<referrer name="mv"/>
+		</member>
+		<member name="M:PlayerPlaySound" syntax="PlayerPlaySound()">
+			<stacksize value="1"/>
+			<referrer name="f"/>
+			<referrer name="d"/>
+			<referrer name="r"/>
+		</member>
+		<member name="M:SEM" syntax="SEM()">
+			<stacksize value="1"/>
+			<referrer name="f"/>
+			<referrer name="r"/>
+			<referrer name="invite"/>
+			<referrer name="uninvite"/>
+			<referrer name="giverank"/>
+		</member>
+		<member name="M:SendClientMessage" syntax="SendClientMessage()">
+			<stacksize value="1"/>
+			<referrer name="duty"/>
+			<referrer name="suspend"/>
+			<referrer name="equip"/>
+			<referrer name="showfmotd"/>
+			<referrer name="fmotd"/>
+			<referrer name="f"/>
+			<referrer name="d"/>
+			<referrer name="epbonus"/>
+			<referrer name="r"/>
+			<referrer name="invite"/>
+			<referrer name="uninvite"/>
+			<referrer name="giverank"/>
+		</member>
+		<member name="M:SendClientMessageToAll" syntax="SendClientMessageToAll()">
+			<stacksize value="1"/>
+			<referrer name="duty"/>
+		</member>
+		<member name="M:SetPVarInt" syntax="SetPVarInt()">
+			<stacksize value="1"/>
+			<referrer name="duty"/>
+			<referrer name="suspend"/>
+			<referrer name="invite"/>
+		</member>
+		<member name="M:SetPlayerArmour" syntax="SetPlayerArmour()">
+			<stacksize value="1"/>
+			<referrer name="equip"/>
+		</member>
+		<member name="M:SetPlayerColor" syntax="SetPlayerColor()">
+			<stacksize value="1"/>
+			<referrer name="duty"/>
+			<referrer name="equip"/>
+		</member>
+		<member name="M:SetPlayerSkin" syntax="SetPlayerSkin()">
+			<stacksize value="1"/>
+			<referrer name="duty"/>
+			<referrer name="suspend"/>
+		</member>
+		<member name="M:WPM" syntax="WPM()">
+			<stacksize value="1"/>
+			<referrer name="suspend"/>
+			<referrer name="fmotd"/>
+			<referrer name="f"/>
+			<referrer name="d"/>
+			<referrer name="r"/>
+			<referrer name="invite"/>
+			<referrer name="uninvite"/>
+			<referrer name="giverank"/>
+		</member>
+		<member name="M:d" syntax="d(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="395"/>
+			<dependency name="IsPlayerConnected"/>
+			<dependency name="PlayerPlaySound"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="WPM"/>
+			<dependency name="format"/>
+			<dependency name="getPlayerName"/>
+			<dependency name="isPlayerinStaat"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:duty" syntax="duty(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="136"/>
+			<dependency name="GetPVarInt"/>
+			<dependency name="IsPlayerInRangeOfPoint"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SendClientMessageToAll"/>
+			<dependency name="SetPVarInt"/>
+			<dependency name="SetPlayerColor"/>
+			<dependency name="SetPlayerSkin"/>
+			<dependency name="format"/>
+			<dependency name="getPlayerName"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:epbonus" syntax="epbonus(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="136"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="format"/>
+			<dependency name="isPlayerInFrak"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:equip" syntax="equip(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="7"/>
+			<dependency name="GivePlayerWeapon"/>
+			<dependency name="IsPlayerInRangeOfPoint"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetPlayerArmour"/>
+			<dependency name="SetPlayerColor"/>
+			<dependency name="staatsequip"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:f" syntax="f(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="1238"/>
+			<dependency name="IsPlayerConnected"/>
+			<dependency name="PlayerPlaySound"/>
+			<dependency name="SEM"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="WPM"/>
+			<dependency name="format"/>
+			<dependency name="getPlayerName"/>
+			<dependency name="isPlayerInFrak"/>
+			<dependency name="isPlayerinStaat"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:fmotd" syntax="fmotd(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="135"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="WPM"/>
+			<dependency name="format"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:format" syntax="format()">
+			<stacksize value="1"/>
+			<referrer name="duty"/>
+			<referrer name="suspend"/>
+			<referrer name="showfmotd"/>
+			<referrer name="fmotd"/>
+			<referrer name="f"/>
+			<referrer name="d"/>
+			<referrer name="epbonus"/>
+			<referrer name="r"/>
+			<referrer name="invite"/>
+			<referrer name="uninvite"/>
+		</member>
+		<member name="M:getPlayerName" syntax="getPlayerName()">
+			<stacksize value="1"/>
+			<referrer name="duty"/>
+			<referrer name="suspend"/>
+			<referrer name="f"/>
+			<referrer name="d"/>
+			<referrer name="r"/>
+			<referrer name="invite"/>
+			<referrer name="uninvite"/>
+		</member>
+		<member name="M:giverank" syntax="giverank(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="10"/>
+			<dependency name="SEM"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="WPM"/>
+			<dependency name="isPlayerInFrak"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:invite" syntax="invite(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="138"/>
+			<dependency name="SEM"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetPVarInt"/>
+			<dependency name="WPM"/>
+			<dependency name="format"/>
+			<dependency name="getPlayerName"/>
+			<dependency name="isPlayerInFrak"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:isLeader" syntax="isLeader()">
+			<stacksize value="1"/>
+			<referrer name="suspend"/>
+		</member>
+		<member name="M:isPlayerInFrak" syntax="isPlayerInFrak()">
+			<stacksize value="1"/>
+			<referrer name="f"/>
+			<referrer name="epbonus"/>
+			<referrer name="r"/>
+			<referrer name="invite"/>
+			<referrer name="uninvite"/>
+			<referrer name="giverank"/>
+		</member>
+		<member name="M:isPlayerinStaat" syntax="isPlayerinStaat()">
+			<stacksize value="1"/>
+			<referrer name="mv"/>
+			<referrer name="f"/>
+			<referrer name="d"/>
+			<referrer name="r"/>
+		</member>
+		<member name="M:mv" syntax="mv(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="20"/>
+			<dependency name="GetObjectPos"/>
+			<dependency name="GetObjectRot"/>
+			<dependency name="IsPlayerInRangeOfPoint"/>
+			<dependency name="MoveObject"/>
+			<dependency name="isPlayerinStaat"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:r" syntax="r(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="1238"/>
+			<dependency name="IsPlayerConnected"/>
+			<dependency name="PlayerPlaySound"/>
+			<dependency name="SEM"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="WPM"/>
+			<dependency name="format"/>
+			<dependency name="getPlayerName"/>
+			<dependency name="isPlayerInFrak"/>
+			<dependency name="isPlayerinStaat"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:showfmotd" syntax="showfmotd(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="135"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="format"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:sscanf" syntax="sscanf()">
+			<stacksize value="1"/>
+			<referrer name="suspend"/>
+			<referrer name="fmotd"/>
+			<referrer name="f"/>
+			<referrer name="d"/>
+			<referrer name="r"/>
+			<referrer name="invite"/>
+			<referrer name="uninvite"/>
+			<referrer name="giverank"/>
+		</member>
+		<member name="M:staatsequip" syntax="staatsequip()">
+			<stacksize value="1"/>
+			<referrer name="equip"/>
+		</member>
+		<member name="M:suspend" syntax="suspend(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="137"/>
+			<dependency name="GetPVarInt"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetPVarInt"/>
+			<dependency name="SetPlayerSkin"/>
+			<dependency name="WPM"/>
+			<dependency name="format"/>
+			<dependency name="getPlayerName"/>
+			<dependency name="isLeader"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:uninvite" syntax="uninvite(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="136"/>
+			<dependency name="SEM"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="WPM"/>
+			<dependency name="format"/>
+			<dependency name="getPlayerName"/>
+			<dependency name="isPlayerInFrak"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+
+	</members>
+</doc>

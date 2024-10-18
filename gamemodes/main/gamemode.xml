@@ -1,0 +1,2083 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet href="file:///C|/Users/ioann/OneDrive/Projekte/mein SAMP Server/openmp version(normal)/qawno/xml/pawndoc.xsl" type="text/xsl"?>
+<doc source="C:\Users\ioann\OneDrive\Projekte\mein SAMP Server\openmp version(normal)\gamemodes\main\gamemode.pwn">
+	<assembly>
+		<name>gamemode.pwn</name>
+	</assembly>
+	<members>
+
+		<!-- enumerations -->
+
+		<!-- constants -->
+		<member name="C:false" value="0">
+			<tagname value="bool"/>
+			<referrer name="OnGameModeInit"/>
+			<referrer name="car"/>
+			<referrer name="houses"/>
+			<referrer name="get"/>
+			<referrer name="use"/>
+			<referrer name="accept"/>
+			<referrer name="v"/>
+			<referrer name="cveh"/>
+			<referrer name="OnPlayerEnterCheckpoint"/>
+			<referrer name="OnPlayerKeyStateChange"/>
+			<referrer name="OnDialogResponse"/>
+		</member>
+		<member name="C:true" value="1">
+			<tagname value="bool"/>
+			<referrer name="OnGameModeInit"/>
+			<referrer name="OnPlayerConnect"/>
+			<referrer name="saveCarToDB"/>
+			<referrer name="OnPlayerSpawn"/>
+			<referrer name="unfreezePlayer"/>
+			<referrer name="use"/>
+			<referrer name="cveh"/>
+			<referrer name="OnPlayerStateChange"/>
+			<referrer name="OnPlayerKeyStateChange"/>
+			<referrer name="OnDialogResponse"/>
+		</member>
+
+		<!-- variables -->
+		<member name="F:ID">
+		</member>
+		<member name="F:__date">
+		</member>
+		<member name="F:__file">
+		</member>
+		<member name="F:__time">
+		</member>
+		<member name="F:stream">
+			<referrer name="OnPlayerConnect"/>
+			<referrer name="OnDialogResponse"/>
+		</member>
+		<member name="F:stundentimer">
+			<referrer name="OnGameModeInit"/>
+			<referrer name="sekunde"/>
+		</member>
+
+		<!-- functions -->
+		<member name="M:AttachTrailerToVehicle" syntax="AttachTrailerToVehicle()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerKeyStateChange"/>
+		</member>
+		<member name="M:CancelFlyMode" syntax="CancelFlyMode()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerDisconnect"/>
+		</member>
+		<member name="M:CarSavedToDB" syntax="CarSavedToDB(carid)">
+			<attribute name="public"/>
+			<stacksize value="3"/>
+			<dependency name="cache_insert_id"/>
+			<param name="carid">
+			</param>
+		</member>
+		<member name="M:ChangeVehicleColours" syntax="ChangeVehicleColours()">
+			<stacksize value="1"/>
+			<referrer name="vcolor"/>
+		</member>
+		<member name="M:CreateDynamicObject" syntax="CreateDynamicObject()">
+			<stacksize value="1"/>
+			<referrer name="OnGameModeInit"/>
+		</member>
+		<member name="M:CreateObject" syntax="CreateObject()">
+			<stacksize value="1"/>
+			<referrer name="OnGameModeInit"/>
+		</member>
+		<member name="M:CreatePickup" syntax="CreatePickup()">
+			<stacksize value="1"/>
+			<referrer name="OnGameModeInit"/>
+		</member>
+		<member name="M:CreatePlayerTextDraw" syntax="CreatePlayerTextDraw()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerConnect"/>
+		</member>
+		<member name="M:CreateVehicle" syntax="CreateVehicle()">
+			<stacksize value="1"/>
+			<referrer name="createCar"/>
+			<referrer name="startbus"/>
+			<referrer name="v"/>
+			<referrer name="OnPlayerCarsLoad"/>
+			<referrer name="OnDialogResponse"/>
+		</member>
+		<member name="M:DestroyVehicle" syntax="DestroyVehicle()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerDisconnect"/>
+			<referrer name="OnVehicleDeath"/>
+			<referrer name="OnPlayerExitVehicle"/>
+		</member>
+		<member name="M:DisableInteriorEnterExits" syntax="DisableInteriorEnterExits()">
+			<stacksize value="1"/>
+			<referrer name="OnGameModeInit"/>
+		</member>
+		<member name="M:DisablePlayerCheckpoint" syntax="DisablePlayerCheckpoint()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerConnect"/>
+			<referrer name="OnPlayerExitVehicle"/>
+			<referrer name="OnPlayerEnterCheckpoint"/>
+		</member>
+		<member name="M:EnableStuntBonusForAll" syntax="EnableStuntBonusForAll()">
+			<stacksize value="1"/>
+			<referrer name="OnGameModeInit"/>
+		</member>
+		<member name="M:GameTextForAll" syntax="GameTextForAll()">
+			<stacksize value="1"/>
+			<referrer name="OnGameModeExit"/>
+		</member>
+		<member name="M:GetMoveDirectionFromKeys" syntax="GetMoveDirectionFromKeys()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerUpdate"/>
+		</member>
+		<member name="M:GetNetworkStats" syntax="GetNetworkStats()">
+			<stacksize value="1"/>
+			<referrer name="NetStatsDisplay"/>
+		</member>
+		<member name="M:GetPVarInt" syntax="GetPVarInt()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerText"/>
+			<referrer name="accept"/>
+			<referrer name="annehmen"/>
+			<referrer name="OnPlayerExitVehicle"/>
+			<referrer name="OnPlayerEnterCheckpoint"/>
+			<referrer name="OnDialogResponse"/>
+		</member>
+		<member name="M:GetPlayerArmour" syntax="GetPlayerArmour()">
+			<stacksize value="1"/>
+			<referrer name="id"/>
+		</member>
+		<member name="M:GetPlayerDistanceFromPoint" syntax="GetPlayerDistanceFromPoint()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerText"/>
+		</member>
+		<member name="M:GetPlayerFacingAngle" syntax="GetPlayerFacingAngle()">
+			<stacksize value="1"/>
+			<referrer name="car"/>
+			<referrer name="startbus"/>
+		</member>
+		<member name="M:GetPlayerHealth" syntax="GetPlayerHealth()">
+			<stacksize value="1"/>
+			<referrer name="id"/>
+			<referrer name="use"/>
+		</member>
+		<member name="M:GetPlayerID" syntax="GetPlayerID(name[])">
+			<stacksize value="7"/>
+			<dependency name="sscanf"/>
+			<param name="name">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:GetPlayerInterior" syntax="GetPlayerInterior()">
+			<stacksize value="1"/>
+			<referrer name="intinfo"/>
+			<referrer name="OnPlayerKeyStateChange"/>
+		</member>
+		<member name="M:GetPlayerKeys" syntax="GetPlayerKeys()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerUpdate"/>
+		</member>
+		<member name="M:GetPlayerMoney" syntax="GetPlayerMoney()">
+			<stacksize value="1"/>
+			<referrer name="get"/>
+			<referrer name="buyhouse"/>
+			<referrer name="OnDialogResponse"/>
+		</member>
+		<member name="M:GetPlayerName" syntax="GetPlayerName()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerConnect"/>
+			<referrer name="OnPlayerDisconnect"/>
+			<referrer name="createCar"/>
+			<referrer name="getPlayerName"/>
+			<referrer name="OnDialogResponse"/>
+		</member>
+		<member name="M:GetPlayerPing" syntax="GetPlayerPing()">
+			<stacksize value="1"/>
+			<referrer name="id"/>
+		</member>
+		<member name="M:GetPlayerPos" syntax="GetPlayerPos()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerConnect"/>
+			<referrer name="OnPlayerDisconnect"/>
+			<referrer name="OnPlayerDeath"/>
+			<referrer name="OnPlayerText"/>
+			<referrer name="dropguns"/>
+			<referrer name="showpos"/>
+			<referrer name="car"/>
+			<referrer name="use"/>
+			<referrer name="startbus"/>
+			<referrer name="v"/>
+			<referrer name="OnDialogResponse"/>
+		</member>
+		<member name="M:GetPlayerScore" syntax="GetPlayerScore()">
+			<stacksize value="1"/>
+			<referrer name="id"/>
+			<referrer name="buyhouse"/>
+		</member>
+		<member name="M:GetPlayerSkin" syntax="GetPlayerSkin()">
+			<stacksize value="1"/>
+			<referrer name="skininfo"/>
+		</member>
+		<member name="M:GetPlayerState" syntax="GetPlayerState()">
+			<stacksize value="1"/>
+			<referrer name="car"/>
+			<referrer name="cveh"/>
+			<referrer name="OnPlayerKeyStateChange"/>
+		</member>
+		<member name="M:GetPlayerVehicleID" syntax="GetPlayerVehicleID()">
+			<stacksize value="1"/>
+			<referrer name="sekunde"/>
+			<referrer name="getPlayerSpeed"/>
+			<referrer name="flip"/>
+			<referrer name="cveh"/>
+			<referrer name="OnPlayerStateChange"/>
+			<referrer name="OnPlayerKeyStateChange"/>
+		</member>
+		<member name="M:GetPlayerVelocity" syntax="GetPlayerVelocity()">
+			<stacksize value="1"/>
+			<referrer name="getPlayerSpeed"/>
+		</member>
+		<member name="M:GetPlayerVirtualWorld" syntax="GetPlayerVirtualWorld()">
+			<stacksize value="1"/>
+			<referrer name="intinfo"/>
+			<referrer name="OnPlayerKeyStateChange"/>
+		</member>
+		<member name="M:GetPlayerWantedLevel" syntax="GetPlayerWantedLevel()">
+			<stacksize value="1"/>
+			<referrer name="clear"/>
+		</member>
+		<member name="M:GetTickCount" syntax="GetTickCount()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerUpdate"/>
+		</member>
+		<member name="M:GetTimerRemaining" syntax="GetTimerRemaining()">
+			<stacksize value="1"/>
+			<referrer name="sekunde"/>
+		</member>
+		<member name="M:GetVehicleDistanceFromPoint" syntax="GetVehicleDistanceFromPoint()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerKeyStateChange"/>
+		</member>
+		<member name="M:GetVehicleModel" syntax="GetVehicleModel()">
+			<stacksize value="1"/>
+			<referrer name="sekunde"/>
+			<referrer name="OnPlayerStateChange"/>
+			<referrer name="OnPlayerKeyStateChange"/>
+		</member>
+		<member name="M:GetVehicleParamsEx" syntax="GetVehicleParamsEx()">
+			<stacksize value="1"/>
+			<referrer name="cveh"/>
+			<referrer name="OnPlayerStateChange"/>
+			<referrer name="OnPlayerKeyStateChange"/>
+		</member>
+		<member name="M:GetVehiclePos" syntax="GetVehiclePos()">
+			<stacksize value="1"/>
+			<referrer name="car"/>
+			<referrer name="getcarowner"/>
+			<referrer name="OnPlayerKeyStateChange"/>
+		</member>
+		<member name="M:GetVehicleVelocity" syntax="GetVehicleVelocity()">
+			<stacksize value="1"/>
+			<referrer name="getPlayerSpeed"/>
+		</member>
+		<member name="M:GivePlayerMoney" syntax="GivePlayerMoney()">
+			<stacksize value="1"/>
+			<referrer name="buyhouse"/>
+			<referrer name="OnPlayerEnterCheckpoint"/>
+			<referrer name="SetPlayerMoney"/>
+			<referrer name="OnDialogResponse"/>
+		</member>
+		<member name="M:GivePlayerWeapon" syntax="GivePlayerWeapon()">
+			<stacksize value="1"/>
+			<referrer name="staatsequip"/>
+			<referrer name="hduty"/>
+		</member>
+		<member name="M:IsPlayerConnected" syntax="IsPlayerConnected()">
+			<stacksize value="1"/>
+			<referrer name="sekunde"/>
+			<referrer name="OnPlayerText"/>
+			<referrer name="hduty"/>
+			<referrer name="id"/>
+			<referrer name="clear"/>
+			<referrer name="su"/>
+		</member>
+		<member name="M:IsPlayerInAnyVehicle" syntax="IsPlayerInAnyVehicle()">
+			<stacksize value="1"/>
+			<referrer name="sekunde"/>
+			<referrer name="getPlayerSpeed"/>
+			<referrer name="flip"/>
+			<referrer name="OnPlayerKeyStateChange"/>
+		</member>
+		<member name="M:IsPlayerInRangeOfPoint" syntax="IsPlayerInRangeOfPoint()">
+			<stacksize value="1"/>
+			<referrer name="isPlayerInRangeOfFrakEnterPoint"/>
+			<referrer name="isPlayerInRangeOfFrakExitPoint"/>
+			<referrer name="OnPlayerDisconnect"/>
+			<referrer name="OnPlayerText"/>
+			<referrer name="dropguns"/>
+			<referrer name="car"/>
+			<referrer name="fcar"/>
+			<referrer name="get"/>
+			<referrer name="use"/>
+			<referrer name="startbus"/>
+			<referrer name="buyhouse"/>
+			<referrer name="getcarowner"/>
+			<referrer name="OnPlayerEnterCheckpoint"/>
+			<referrer name="OnPlayerKeyStateChange"/>
+		</member>
+		<member name="M:IsTrailerAttachedToVehicle" syntax="IsTrailerAttachedToVehicle()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerKeyStateChange"/>
+		</member>
+		<member name="M:IsVehicleStreamedIn" syntax="IsVehicleStreamedIn()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerKeyStateChange"/>
+		</member>
+		<member name="M:Kick" syntax="Kick()">
+			<stacksize value="1"/>
+			<referrer name="OnDialogResponse"/>
+		</member>
+		<member name="M:KillTimer" syntax="KillTimer()">
+			<stacksize value="1"/>
+			<referrer name="OnDialogResponse"/>
+		</member>
+		<member name="M:LoadHouses" syntax="LoadHouses()">
+			<stacksize value="1"/>
+			<referrer name="OnGameModeInit"/>
+		</member>
+		<member name="M:ManualVehicleEngineAndLights" syntax="ManualVehicleEngineAndLights()">
+			<stacksize value="1"/>
+			<referrer name="OnGameModeInit"/>
+		</member>
+		<member name="M:MoveCamera" syntax="MoveCamera()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerUpdate"/>
+		</member>
+		<member name="M:NetStatsDisplay" syntax="NetStatsDisplay()">
+			<attribute name="public"/>
+			<stacksize value="2059"/>
+			<dependency name="GetNetworkStats"/>
+			<dependency name="ShowPlayerDialog"/>
+		</member>
+		<member name="M:OnDialogResponse" syntax="OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])">
+			<attribute name="public"/>
+			<stacksize value="263"/>
+			<dependency name="CreateVehicle"/>
+			<dependency name="GetPVarInt"/>
+			<dependency name="GetPlayerMoney"/>
+			<dependency name="GetPlayerName"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="GivePlayerMoney"/>
+			<dependency name="Kick"/>
+			<dependency name="KillTimer"/>
+			<dependency name="PlayAudioStreamForPlayer"/>
+			<dependency name="RemovePlayerFromVehicle"/>
+			<dependency name="SendAdminMessage"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SendClientMessageToAll"/>
+			<dependency name="SetPVarInt"/>
+			<dependency name="SetPlayerColor"/>
+			<dependency name="SetPlayerInterior"/>
+			<dependency name="SetPlayerPos"/>
+			<dependency name="SetPlayerVirtualWorld"/>
+			<dependency name="ShowPlayerDialog"/>
+			<dependency name="StopAudioStreamForPlayer"/>
+			<dependency name="TextDrawHideForPlayer"/>
+			<dependency name="TextDrawShowForPlayer"/>
+			<dependency name="createCar"/>
+			<dependency name="false"/>
+			<dependency name="format"/>
+			<dependency name="getPlayerName"/>
+			<dependency name="hatPlayerHaus"/>
+			<dependency name="isaduty"/>
+			<dependency name="mysql_escape_string"/>
+			<dependency name="mysql_format"/>
+			<dependency name="mysql_tquery"/>
+			<dependency name="random"/>
+			<dependency name="stream"/>
+			<dependency name="strlen"/>
+			<dependency name="true"/>
+			<param name="playerid">
+			</param>
+			<param name="dialogid">
+			</param>
+			<param name="response">
+			</param>
+			<param name="listitem">
+			</param>
+			<param name="inputtext">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:OnGameModeExit" syntax="OnGameModeExit()">
+			<attribute name="public"/>
+			<stacksize value="6"/>
+			<dependency name="GameTextForAll"/>
+			<dependency name="SendClientMessageToAll"/>
+			<dependency name="mysql_close"/>
+			<dependency name="printf"/>
+			<dependency name="savefraks"/>
+		</member>
+		<member name="M:OnGameModeInit" syntax="OnGameModeInit()">
+			<attribute name="public"/>
+			<stacksize value="13"/>
+			<dependency name="CreateDynamicObject"/>
+			<dependency name="CreateObject"/>
+			<dependency name="CreatePickup"/>
+			<dependency name="DisableInteriorEnterExits"/>
+			<dependency name="EnableStuntBonusForAll"/>
+			<dependency name="LoadHouses"/>
+			<dependency name="ManualVehicleEngineAndLights"/>
+			<dependency name="SendRconCommand"/>
+			<dependency name="SetGameModeText"/>
+			<dependency name="SetTimer"/>
+			<dependency name="SetWorldTime"/>
+			<dependency name="ShowPlayerMarkers"/>
+			<dependency name="TextDrawAlignment"/>
+			<dependency name="TextDrawBackgroundColour"/>
+			<dependency name="TextDrawBoxColour"/>
+			<dependency name="TextDrawColour"/>
+			<dependency name="TextDrawCreate"/>
+			<dependency name="TextDrawFont"/>
+			<dependency name="TextDrawLetterSize"/>
+			<dependency name="TextDrawSetOutline"/>
+			<dependency name="TextDrawSetProportional"/>
+			<dependency name="TextDrawSetShadow"/>
+			<dependency name="TextDrawTextSize"/>
+			<dependency name="TextDrawUseBox"/>
+			<dependency name="UsePlayerPedAnims"/>
+			<dependency name="false"/>
+			<dependency name="gettime"/>
+			<dependency name="loadBizes"/>
+			<dependency name="loadJobs"/>
+			<dependency name="loadfraks"/>
+			<dependency name="loadiraum"/>
+			<dependency name="mysql_connect"/>
+			<dependency name="mysql_log"/>
+			<dependency name="printf"/>
+			<dependency name="stundentimer"/>
+			<dependency name="true"/>
+		</member>
+		<member name="M:OnPlayerCarsLoad" syntax="OnPlayerCarsLoad(playerid)">
+			<attribute name="public"/>
+			<stacksize value="10"/>
+			<dependency name="CreateVehicle"/>
+			<dependency name="cache_get_field_count"/>
+			<dependency name="cache_get_row_count"/>
+			<dependency name="cache_get_value_name"/>
+			<dependency name="cache_get_value_name_float"/>
+			<dependency name="cache_get_value_name_int"/>
+			<dependency name="getFreeCarID"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:OnPlayerConnect" syntax="OnPlayerConnect(playerid)">
+			<attribute name="public"/>
+			<stacksize value="10"/>
+			<dependency name="CreatePlayerTextDraw"/>
+			<dependency name="DisablePlayerCheckpoint"/>
+			<dependency name="GetPlayerName"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="PlayAudioStreamForPlayer"/>
+			<dependency name="PlayerTextDrawBackgroundColour"/>
+			<dependency name="PlayerTextDrawColour"/>
+			<dependency name="PlayerTextDrawFont"/>
+			<dependency name="PlayerTextDrawHide"/>
+			<dependency name="PlayerTextDrawLetterSize"/>
+			<dependency name="PlayerTextDrawSetOutline"/>
+			<dependency name="PlayerTextDrawSetProportional"/>
+			<dependency name="PlayerTextDrawSetShadow"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetPlayerCameraLookAt"/>
+			<dependency name="SetPlayerCameraPos"/>
+			<dependency name="SetPlayerColor"/>
+			<dependency name="TextDrawShowForPlayer"/>
+			<dependency name="mysql_format"/>
+			<dependency name="mysql_tquery"/>
+			<dependency name="resetnoclip"/>
+			<dependency name="stream"/>
+			<dependency name="true"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:OnPlayerDeath" syntax="OnPlayerDeath(playerid, killerid, reason)">
+			<attribute name="public"/>
+			<stacksize value="71"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetPVarInt"/>
+			<dependency name="SetPlayerArmour"/>
+			<dependency name="format"/>
+			<param name="playerid">
+			</param>
+			<param name="killerid">
+			</param>
+			<param name="reason">
+				<paraminfo>WEAPON </paraminfo>
+			</param>
+		</member>
+		<member name="M:OnPlayerDisconnect" syntax="OnPlayerDisconnect(playerid, reason)">
+			<attribute name="public"/>
+			<stacksize value="334"/>
+			<dependency name="CancelFlyMode"/>
+			<dependency name="DestroyVehicle"/>
+			<dependency name="GetPlayerName"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="IsPlayerInRangeOfPoint"/>
+			<dependency name="PlayerTextDrawDestroy"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetPlayerColor"/>
+			<dependency name="StopAudioStreamForPlayer"/>
+			<dependency name="format"/>
+			<dependency name="getdate"/>
+			<dependency name="gettime"/>
+			<dependency name="mysql_format"/>
+			<dependency name="mysql_tquery"/>
+			<dependency name="print"/>
+			<dependency name="resetPlayer"/>
+			<dependency name="savePlayer"/>
+			<param name="playerid">
+			</param>
+			<param name="reason">
+			</param>
+		</member>
+		<member name="M:OnPlayerEnterCheckpoint" syntax="OnPlayerEnterCheckpoint(playerid)">
+			<attribute name="public"/>
+			<stacksize value="7"/>
+			<dependency name="DisablePlayerCheckpoint"/>
+			<dependency name="GetPVarInt"/>
+			<dependency name="GivePlayerMoney"/>
+			<dependency name="IsPlayerInRangeOfPoint"/>
+			<dependency name="SetPVarInt"/>
+			<dependency name="SetPlayerCheckpoint"/>
+			<dependency name="TogglePlayerControllable"/>
+			<dependency name="false"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:OnPlayerEnterVehicle" syntax="OnPlayerEnterVehicle(playerid, vehicleid, ispassenger)">
+			<attribute name="public"/>
+			<stacksize value="1"/>
+			<param name="playerid">
+			</param>
+			<param name="vehicleid">
+			</param>
+			<param name="ispassenger">
+			</param>
+		</member>
+		<member name="M:OnPlayerExitVehicle" syntax="OnPlayerExitVehicle(playerid, vehicleid)">
+			<attribute name="public"/>
+			<stacksize value="6"/>
+			<dependency name="DestroyVehicle"/>
+			<dependency name="DisablePlayerCheckpoint"/>
+			<dependency name="GetPVarInt"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetPVarInt"/>
+			<param name="playerid">
+			</param>
+			<param name="vehicleid">
+			</param>
+		</member>
+		<member name="M:OnPlayerInteriorChange" syntax="OnPlayerInteriorChange(playerid, newinteriorid, oldinteriorid)">
+			<attribute name="public"/>
+			<stacksize value="1"/>
+			<param name="playerid">
+			</param>
+			<param name="newinteriorid">
+			</param>
+			<param name="oldinteriorid">
+			</param>
+		</member>
+		<member name="M:OnPlayerKeyStateChange" syntax="OnPlayerKeyStateChange(playerid, newkeys, oldkeys)">
+			<attribute name="public"/>
+			<stacksize value="19"/>
+			<dependency name="AttachTrailerToVehicle"/>
+			<dependency name="GetPlayerInterior"/>
+			<dependency name="GetPlayerState"/>
+			<dependency name="GetPlayerVehicleID"/>
+			<dependency name="GetPlayerVirtualWorld"/>
+			<dependency name="GetVehicleDistanceFromPoint"/>
+			<dependency name="GetVehicleModel"/>
+			<dependency name="GetVehicleParamsEx"/>
+			<dependency name="GetVehiclePos"/>
+			<dependency name="IsPlayerInAnyVehicle"/>
+			<dependency name="IsPlayerInRangeOfPoint"/>
+			<dependency name="IsTrailerAttachedToVehicle"/>
+			<dependency name="IsVehicleStreamedIn"/>
+			<dependency name="SEM"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetPlayerInterior"/>
+			<dependency name="SetPlayerPos"/>
+			<dependency name="SetPlayerVirtualWorld"/>
+			<dependency name="SetVehicleParamsEx"/>
+			<dependency name="false"/>
+			<dependency name="isPlayerInFrak"/>
+			<dependency name="isPlayerInRangeOfFrakEnterPoint"/>
+			<dependency name="isPlayerInRangeOfFrakExitPoint"/>
+			<dependency name="true"/>
+			<param name="playerid">
+			</param>
+			<param name="newkeys">
+				<paraminfo>KEY </paraminfo>
+			</param>
+			<param name="oldkeys">
+				<paraminfo>KEY </paraminfo>
+			</param>
+		</member>
+		<member name="M:OnPlayerRequestClass" syntax="OnPlayerRequestClass(playerid, classid)">
+			<attribute name="public"/>
+			<stacksize value="5"/>
+			<dependency name="SetCameraBehindPlayer"/>
+			<dependency name="SetPlayerVirtualWorld"/>
+			<param name="playerid">
+			</param>
+			<param name="classid">
+			</param>
+		</member>
+		<member name="M:OnPlayerSpawn" syntax="OnPlayerSpawn(playerid)">
+			<attribute name="public"/>
+			<stacksize value="654"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SendClientMessageToAll"/>
+			<dependency name="SetPlayerColor"/>
+			<dependency name="SetPlayerFacingAngle"/>
+			<dependency name="SetPlayerInterior"/>
+			<dependency name="SetPlayerPos"/>
+			<dependency name="SetPlayerScore"/>
+			<dependency name="SetPlayerSkin"/>
+			<dependency name="SetPlayerVirtualWorld"/>
+			<dependency name="ShowPlayerDialog"/>
+			<dependency name="StopAudioStreamForPlayer"/>
+			<dependency name="format"/>
+			<dependency name="getPlayerName"/>
+			<dependency name="getdate"/>
+			<dependency name="gettime"/>
+			<dependency name="isPlayerinBadFrak"/>
+			<dependency name="strcmp"/>
+			<dependency name="strlen"/>
+			<dependency name="true"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:OnPlayerStateChange" syntax="OnPlayerStateChange(playerid, newstate, oldstate)">
+			<attribute name="public"/>
+			<stacksize value="20"/>
+			<dependency name="GetPlayerVehicleID"/>
+			<dependency name="GetVehicleModel"/>
+			<dependency name="GetVehicleParamsEx"/>
+			<dependency name="PlayerTextDrawHide"/>
+			<dependency name="PlayerTextDrawShow"/>
+			<dependency name="SetPlayerArmedWeapon"/>
+			<dependency name="SetPlayerHealth"/>
+			<dependency name="SetPlayerPos"/>
+			<dependency name="SetVehicleParamsEx"/>
+			<dependency name="TextDrawHideForPlayer"/>
+			<dependency name="TextDrawShowForPlayer"/>
+			<dependency name="true"/>
+			<param name="playerid">
+			</param>
+			<param name="newstate">
+				<paraminfo>PLAYER_STATE </paraminfo>
+			</param>
+			<param name="oldstate">
+				<paraminfo>PLAYER_STATE </paraminfo>
+			</param>
+		</member>
+		<member name="M:OnPlayerStreamIn" syntax="OnPlayerStreamIn(playerid, forplayerid)">
+			<attribute name="public"/>
+			<stacksize value="1"/>
+			<param name="playerid">
+			</param>
+			<param name="forplayerid">
+			</param>
+		</member>
+		<member name="M:OnPlayerStreamOut" syntax="OnPlayerStreamOut(playerid, forplayerid)">
+			<attribute name="public"/>
+			<stacksize value="1"/>
+			<param name="playerid">
+			</param>
+			<param name="forplayerid">
+			</param>
+		</member>
+		<member name="M:OnPlayerText" syntax="OnPlayerText(playerid, text[])">
+			<attribute name="public"/>
+			<stacksize value="142"/>
+			<dependency name="GetPVarInt"/>
+			<dependency name="GetPlayerDistanceFromPoint"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="IsPlayerConnected"/>
+			<dependency name="IsPlayerInRangeOfPoint"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="format"/>
+			<dependency name="getPlayerName"/>
+			<param name="playerid">
+			</param>
+			<param name="text">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:OnPlayerUpdate" syntax="OnPlayerUpdate(playerid)">
+			<attribute name="public"/>
+			<stacksize value="10"/>
+			<dependency name="GetMoveDirectionFromKeys"/>
+			<dependency name="GetPlayerKeys"/>
+			<dependency name="GetTickCount"/>
+			<dependency name="MoveCamera"/>
+			<dependency name="StopPlayerObject"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:OnRconLoginAttempt" syntax="OnRconLoginAttempt(ip[], password[], success)">
+			<attribute name="public"/>
+			<stacksize value="1"/>
+			<param name="ip">
+				<paraminfo> [] </paraminfo>
+			</param>
+			<param name="password">
+				<paraminfo> [] </paraminfo>
+			</param>
+			<param name="success">
+			</param>
+		</member>
+		<member name="M:OnVehicleDeath" syntax="OnVehicleDeath(vehicleid, killerid)">
+			<attribute name="public"/>
+			<stacksize value="4"/>
+			<dependency name="DestroyVehicle"/>
+			<param name="vehicleid">
+			</param>
+			<param name="killerid">
+			</param>
+		</member>
+		<member name="M:OnVehicleSpawn" syntax="OnVehicleSpawn(vehicleid)">
+			<attribute name="public"/>
+			<stacksize value="1"/>
+			<param name="vehicleid">
+			</param>
+		</member>
+		<member name="M:OnVehicleStreamIn" syntax="OnVehicleStreamIn(vehicleid, forplayerid)">
+			<attribute name="public"/>
+			<stacksize value="1"/>
+			<param name="vehicleid">
+			</param>
+			<param name="forplayerid">
+			</param>
+		</member>
+		<member name="M:OnVehicleStreamOut" syntax="OnVehicleStreamOut(vehicleid, forplayerid)">
+			<attribute name="public"/>
+			<stacksize value="1"/>
+			<param name="vehicleid">
+			</param>
+			<param name="forplayerid">
+			</param>
+		</member>
+		<member name="M:PlayAudioStreamForPlayer" syntax="PlayAudioStreamForPlayer()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerConnect"/>
+			<referrer name="OnDialogResponse"/>
+		</member>
+		<member name="M:PlayerTextDrawBackgroundColour" syntax="PlayerTextDrawBackgroundColour()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerConnect"/>
+		</member>
+		<member name="M:PlayerTextDrawColour" syntax="PlayerTextDrawColour()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerConnect"/>
+		</member>
+		<member name="M:PlayerTextDrawDestroy" syntax="PlayerTextDrawDestroy()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerDisconnect"/>
+		</member>
+		<member name="M:PlayerTextDrawFont" syntax="PlayerTextDrawFont()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerConnect"/>
+		</member>
+		<member name="M:PlayerTextDrawHide" syntax="PlayerTextDrawHide()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerConnect"/>
+			<referrer name="OnPlayerStateChange"/>
+		</member>
+		<member name="M:PlayerTextDrawLetterSize" syntax="PlayerTextDrawLetterSize()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerConnect"/>
+		</member>
+		<member name="M:PlayerTextDrawSetOutline" syntax="PlayerTextDrawSetOutline()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerConnect"/>
+		</member>
+		<member name="M:PlayerTextDrawSetProportional" syntax="PlayerTextDrawSetProportional()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerConnect"/>
+		</member>
+		<member name="M:PlayerTextDrawSetShadow" syntax="PlayerTextDrawSetShadow()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerConnect"/>
+		</member>
+		<member name="M:PlayerTextDrawSetString" syntax="PlayerTextDrawSetString()">
+			<stacksize value="1"/>
+			<referrer name="sekunde"/>
+		</member>
+		<member name="M:PlayerTextDrawShow" syntax="PlayerTextDrawShow()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerStateChange"/>
+		</member>
+		<member name="M:PutPlayerInVehicle" syntax="PutPlayerInVehicle()">
+			<stacksize value="1"/>
+			<referrer name="startbus"/>
+		</member>
+		<member name="M:RemovePlayerFromVehicle" syntax="RemovePlayerFromVehicle()">
+			<stacksize value="1"/>
+			<referrer name="OnDialogResponse"/>
+		</member>
+		<member name="M:ResetPlayerMoney" syntax="ResetPlayerMoney()">
+			<stacksize value="1"/>
+			<referrer name="SetPlayerMoney"/>
+		</member>
+		<member name="M:ResetPlayerWeapons" syntax="ResetPlayerWeapons()">
+			<stacksize value="1"/>
+			<referrer name="dropguns"/>
+		</member>
+		<member name="M:SCM" syntax="SCM()">
+			<stacksize value="1"/>
+			<referrer name="suicide"/>
+			<referrer name="car"/>
+		</member>
+		<member name="M:SEM" syntax="SEM()">
+			<stacksize value="1"/>
+			<referrer name="car"/>
+			<referrer name="get"/>
+			<referrer name="accept"/>
+			<referrer name="annehmen"/>
+			<referrer name="buyhouse"/>
+			<referrer name="flip"/>
+			<referrer name="cveh"/>
+			<referrer name="getcarowner"/>
+			<referrer name="OnPlayerKeyStateChange"/>
+		</member>
+		<member name="M:SendAdminMessage" syntax="SendAdminMessage()">
+			<stacksize value="1"/>
+			<referrer name="OnDialogResponse"/>
+		</member>
+		<member name="M:SendClientMessage" syntax="SendClientMessage(playerid, COLOR_HGREEN)">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerConnect"/>
+			<referrer name="OnPlayerDisconnect"/>
+			<referrer name="OnPlayerSpawn"/>
+			<referrer name="OnPlayerDeath"/>
+			<referrer name="OnPlayerText"/>
+			<referrer name="createCar"/>
+			<referrer name="intinfo"/>
+			<referrer name="showfill"/>
+			<referrer name="vcolor"/>
+			<referrer name="time"/>
+			<referrer name="skininfo"/>
+			<referrer name="dropguns"/>
+			<referrer name="showpos"/>
+			<referrer name="car"/>
+			<referrer name="houses"/>
+			<referrer name="vehicles"/>
+			<referrer name="hduty"/>
+			<referrer name="id"/>
+			<referrer name="credits"/>
+			<referrer name="discord"/>
+			<referrer name="clear"/>
+			<referrer name="su"/>
+			<referrer name="inv"/>
+			<referrer name="get"/>
+			<referrer name="use"/>
+			<referrer name="getfrang"/>
+			<referrer name="accept"/>
+			<referrer name="annehmen"/>
+			<referrer name="spawnchange"/>
+			<referrer name="startbus"/>
+			<referrer name="buyhouse"/>
+			<referrer name="flip"/>
+			<referrer name="cveh"/>
+			<referrer name="getcarowner"/>
+			<referrer name="OnPlayerExitVehicle"/>
+			<referrer name="OnPlayerKeyStateChange"/>
+			<referrer name="OnDialogResponse"/>
+			<referrer name="nichts"/>
+			<param name="playerid">
+			</param>
+			<param name="COLOR_HGREEN">
+			</param>
+		</member>
+		<member name="M:SendClientMessageToAll" syntax="SendClientMessageToAll()">
+			<stacksize value="1"/>
+			<referrer name="OnGameModeExit"/>
+			<referrer name="sekunde"/>
+			<referrer name="OnPlayerSpawn"/>
+			<referrer name="OnDialogResponse"/>
+		</member>
+		<member name="M:SendRconCommand" syntax="SendRconCommand()">
+			<stacksize value="1"/>
+			<referrer name="OnGameModeInit"/>
+		</member>
+		<member name="M:SetCameraBehindPlayer" syntax="SetCameraBehindPlayer()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerRequestClass"/>
+		</member>
+		<member name="M:SetGameModeText" syntax="SetGameModeText()">
+			<stacksize value="1"/>
+			<referrer name="OnGameModeInit"/>
+		</member>
+		<member name="M:SetPVarInt" syntax="SetPVarInt(playerid)">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerDeath"/>
+			<referrer name="accept"/>
+			<referrer name="annehmen"/>
+			<referrer name="startbus"/>
+			<referrer name="OnPlayerExitVehicle"/>
+			<referrer name="OnPlayerEnterCheckpoint"/>
+			<referrer name="OnDialogResponse"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:SetPlayerArmedWeapon" syntax="SetPlayerArmedWeapon()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerStateChange"/>
+		</member>
+		<member name="M:SetPlayerArmour" syntax="SetPlayerArmour()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerDeath"/>
+			<referrer name="suicide"/>
+			<referrer name="hduty"/>
+		</member>
+		<member name="M:SetPlayerCameraLookAt" syntax="SetPlayerCameraLookAt()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerConnect"/>
+		</member>
+		<member name="M:SetPlayerCameraPos" syntax="SetPlayerCameraPos()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerConnect"/>
+		</member>
+		<member name="M:SetPlayerCheckpoint" syntax="SetPlayerCheckpoint()">
+			<stacksize value="1"/>
+			<referrer name="startbus"/>
+			<referrer name="OnPlayerEnterCheckpoint"/>
+		</member>
+		<member name="M:SetPlayerColor" syntax="SetPlayerColor()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerConnect"/>
+			<referrer name="OnPlayerDisconnect"/>
+			<referrer name="OnPlayerSpawn"/>
+			<referrer name="OnDialogResponse"/>
+		</member>
+		<member name="M:SetPlayerFacingAngle" syntax="SetPlayerFacingAngle()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerSpawn"/>
+		</member>
+		<member name="M:SetPlayerHealth" syntax="SetPlayerHealth()">
+			<stacksize value="1"/>
+			<referrer name="suicide"/>
+			<referrer name="hduty"/>
+			<referrer name="use"/>
+			<referrer name="OnPlayerStateChange"/>
+		</member>
+		<member name="M:SetPlayerInterior" syntax="SetPlayerInterior()">
+			<stacksize value="1"/>
+			<referrer name="isPlayerInRangeOfFrakEnterPoint"/>
+			<referrer name="isPlayerInRangeOfFrakExitPoint"/>
+			<referrer name="OnPlayerSpawn"/>
+			<referrer name="OnPlayerKeyStateChange"/>
+			<referrer name="OnDialogResponse"/>
+		</member>
+		<member name="M:SetPlayerMoney" syntax="SetPlayerMoney(playerid, money)">
+			<stacksize value="5"/>
+			<referrer name="get"/>
+			<dependency name="GivePlayerMoney"/>
+			<dependency name="ResetPlayerMoney"/>
+			<param name="playerid">
+			</param>
+			<param name="money">
+			</param>
+		</member>
+		<member name="M:SetPlayerPos" syntax="SetPlayerPos()">
+			<stacksize value="1"/>
+			<referrer name="isPlayerInRangeOfFrakEnterPoint"/>
+			<referrer name="isPlayerInRangeOfFrakExitPoint"/>
+			<referrer name="OnPlayerSpawn"/>
+			<referrer name="OnPlayerStateChange"/>
+			<referrer name="OnPlayerKeyStateChange"/>
+			<referrer name="OnDialogResponse"/>
+		</member>
+		<member name="M:SetPlayerScore" syntax="SetPlayerScore()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerSpawn"/>
+		</member>
+		<member name="M:SetPlayerSkin" syntax="SetPlayerSkin()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerSpawn"/>
+			<referrer name="setfskin"/>
+		</member>
+		<member name="M:SetPlayerVirtualWorld" syntax="SetPlayerVirtualWorld()">
+			<stacksize value="1"/>
+			<referrer name="isPlayerInRangeOfFrakEnterPoint"/>
+			<referrer name="isPlayerInRangeOfFrakExitPoint"/>
+			<referrer name="OnPlayerRequestClass"/>
+			<referrer name="OnPlayerSpawn"/>
+			<referrer name="OnPlayerKeyStateChange"/>
+			<referrer name="OnDialogResponse"/>
+		</member>
+		<member name="M:SetPlayerWantedLevel" syntax="SetPlayerWantedLevel()">
+			<stacksize value="1"/>
+			<referrer name="clear"/>
+			<referrer name="su"/>
+		</member>
+		<member name="M:SetTimer" syntax="SetTimer()">
+			<stacksize value="1"/>
+			<referrer name="OnGameModeInit"/>
+		</member>
+		<member name="M:SetVehicleHealth" syntax="SetVehicleHealth()">
+			<stacksize value="1"/>
+			<referrer name="createCar"/>
+		</member>
+		<member name="M:SetVehicleNumberPlate" syntax="SetVehicleNumberPlate()">
+			<stacksize value="1"/>
+			<referrer name="createCar"/>
+		</member>
+		<member name="M:SetVehicleParamsEx" syntax="SetVehicleParamsEx()">
+			<stacksize value="1"/>
+			<referrer name="cveh"/>
+			<referrer name="OnPlayerStateChange"/>
+			<referrer name="OnPlayerKeyStateChange"/>
+		</member>
+		<member name="M:SetVehicleZAngle" syntax="SetVehicleZAngle()">
+			<stacksize value="1"/>
+			<referrer name="flip"/>
+		</member>
+		<member name="M:SetWorldTime" syntax="SetWorldTime()">
+			<stacksize value="1"/>
+			<referrer name="OnGameModeInit"/>
+			<referrer name="stunde"/>
+		</member>
+		<member name="M:ShowPlayerDialog" syntax="ShowPlayerDialog(playerid, DIALOG_STREAM, DIALOG_STYLE_LIST)">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerSpawn"/>
+			<referrer name="play"/>
+			<referrer name="fcar"/>
+			<referrer name="spawnchange"/>
+			<referrer name="OnDialogResponse"/>
+			<referrer name="trade"/>
+			<referrer name="NetStatsDisplay"/>
+			<param name="playerid">
+			</param>
+			<param name="DIALOG_STREAM">
+			</param>
+			<param name="DIALOG_STYLE_LIST">
+			</param>
+		</member>
+		<member name="M:ShowPlayerMarkers" syntax="ShowPlayerMarkers()">
+			<stacksize value="1"/>
+			<referrer name="OnGameModeInit"/>
+		</member>
+		<member name="M:StopAudioStreamForPlayer" syntax="StopAudioStreamForPlayer(playerid)">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerDisconnect"/>
+			<referrer name="OnPlayerSpawn"/>
+			<referrer name="stopstream"/>
+			<referrer name="OnDialogResponse"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:StopPlayerObject" syntax="StopPlayerObject()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerUpdate"/>
+		</member>
+		<member name="M:TextDrawAlignment" syntax="TextDrawAlignment()">
+			<stacksize value="1"/>
+			<referrer name="OnGameModeInit"/>
+		</member>
+		<member name="M:TextDrawBackgroundColour" syntax="TextDrawBackgroundColour()">
+			<stacksize value="1"/>
+			<referrer name="OnGameModeInit"/>
+		</member>
+		<member name="M:TextDrawBoxColour" syntax="TextDrawBoxColour()">
+			<stacksize value="1"/>
+			<referrer name="OnGameModeInit"/>
+		</member>
+		<member name="M:TextDrawColour" syntax="TextDrawColour()">
+			<stacksize value="1"/>
+			<referrer name="OnGameModeInit"/>
+		</member>
+		<member name="M:TextDrawCreate" syntax="TextDrawCreate()">
+			<stacksize value="1"/>
+			<referrer name="OnGameModeInit"/>
+		</member>
+		<member name="M:TextDrawFont" syntax="TextDrawFont()">
+			<stacksize value="1"/>
+			<referrer name="OnGameModeInit"/>
+		</member>
+		<member name="M:TextDrawHideForPlayer" syntax="TextDrawHideForPlayer()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerStateChange"/>
+			<referrer name="OnDialogResponse"/>
+		</member>
+		<member name="M:TextDrawLetterSize" syntax="TextDrawLetterSize()">
+			<stacksize value="1"/>
+			<referrer name="OnGameModeInit"/>
+		</member>
+		<member name="M:TextDrawSetOutline" syntax="TextDrawSetOutline()">
+			<stacksize value="1"/>
+			<referrer name="OnGameModeInit"/>
+		</member>
+		<member name="M:TextDrawSetProportional" syntax="TextDrawSetProportional()">
+			<stacksize value="1"/>
+			<referrer name="OnGameModeInit"/>
+		</member>
+		<member name="M:TextDrawSetShadow" syntax="TextDrawSetShadow()">
+			<stacksize value="1"/>
+			<referrer name="OnGameModeInit"/>
+		</member>
+		<member name="M:TextDrawSetString" syntax="TextDrawSetString()">
+			<stacksize value="1"/>
+			<referrer name="sekunde"/>
+		</member>
+		<member name="M:TextDrawShowForPlayer" syntax="TextDrawShowForPlayer()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerConnect"/>
+			<referrer name="OnPlayerStateChange"/>
+			<referrer name="OnDialogResponse"/>
+		</member>
+		<member name="M:TextDrawTextSize" syntax="TextDrawTextSize()">
+			<stacksize value="1"/>
+			<referrer name="OnGameModeInit"/>
+		</member>
+		<member name="M:TextDrawUseBox" syntax="TextDrawUseBox()">
+			<stacksize value="1"/>
+			<referrer name="OnGameModeInit"/>
+		</member>
+		<member name="M:TogglePlayerControllable" syntax="TogglePlayerControllable()">
+			<stacksize value="1"/>
+			<referrer name="unfreezePlayer"/>
+			<referrer name="OnPlayerEnterCheckpoint"/>
+		</member>
+		<member name="M:UsePlayerPedAnims" syntax="UsePlayerPedAnims()">
+			<stacksize value="1"/>
+			<referrer name="OnGameModeInit"/>
+		</member>
+		<member name="M:WPM" syntax="WPM()">
+			<stacksize value="1"/>
+			<referrer name="showpos"/>
+			<referrer name="car"/>
+			<referrer name="setfskin"/>
+			<referrer name="id"/>
+			<referrer name="clear"/>
+			<referrer name="su"/>
+			<referrer name="get"/>
+			<referrer name="use"/>
+			<referrer name="accept"/>
+			<referrer name="v"/>
+			<referrer name="cveh"/>
+		</member>
+		<member name="M:accept" syntax="accept(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="200"/>
+			<dependency name="GetPVarInt"/>
+			<dependency name="SEM"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetPVarInt"/>
+			<dependency name="WPM"/>
+			<dependency name="false"/>
+			<dependency name="format"/>
+			<dependency name="getPlayerName"/>
+			<dependency name="sscanf"/>
+			<dependency name="strcmp"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:annehmen" syntax="annehmen(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="136"/>
+			<dependency name="GetPVarInt"/>
+			<dependency name="SEM"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetPVarInt"/>
+			<dependency name="format"/>
+			<dependency name="getPlayerName"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:buyhouse" syntax="buyhouse(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="6"/>
+			<dependency name="GetPlayerMoney"/>
+			<dependency name="GetPlayerScore"/>
+			<dependency name="GivePlayerMoney"/>
+			<dependency name="IsPlayerInRangeOfPoint"/>
+			<dependency name="SEM"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="getPlayerName"/>
+			<dependency name="hatPlayerHaus"/>
+			<dependency name="saveHaus"/>
+			<dependency name="strlen"/>
+			<dependency name="strmid"/>
+			<dependency name="updateHaus"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:cache_get_field_count" syntax="cache_get_field_count()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerCarsLoad"/>
+		</member>
+		<member name="M:cache_get_row_count" syntax="cache_get_row_count()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerCarsLoad"/>
+		</member>
+		<member name="M:cache_get_value_name" syntax="cache_get_value_name()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerCarsLoad"/>
+		</member>
+		<member name="M:cache_get_value_name_float" syntax="cache_get_value_name_float()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerCarsLoad"/>
+		</member>
+		<member name="M:cache_get_value_name_int" syntax="cache_get_value_name_int()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerCarsLoad"/>
+		</member>
+		<member name="M:cache_insert_id" syntax="cache_insert_id()">
+			<stacksize value="1"/>
+			<referrer name="CarSavedToDB"/>
+		</member>
+		<member name="M:car" syntax="car(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="150"/>
+			<dependency name="GetPlayerFacingAngle"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="GetPlayerState"/>
+			<dependency name="GetVehiclePos"/>
+			<dependency name="IsPlayerInRangeOfPoint"/>
+			<dependency name="SCM"/>
+			<dependency name="SEM"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="WPM"/>
+			<dependency name="false"/>
+			<dependency name="format"/>
+			<dependency name="printf"/>
+			<dependency name="sscanf"/>
+			<dependency name="strcmp"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:changeweather" syntax="changeweather()">
+			<stacksize value="1"/>
+			<referrer name="stunde"/>
+		</member>
+		<member name="M:clear" syntax="clear(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="137"/>
+			<dependency name="GetPlayerWantedLevel"/>
+			<dependency name="IsPlayerConnected"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetPlayerWantedLevel"/>
+			<dependency name="WPM"/>
+			<dependency name="format"/>
+			<dependency name="getPlayerName"/>
+			<dependency name="isPlayerinStaat"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:createCar" syntax="createCar(playerid, modelid, x, y, z, r)">
+			<stacksize value="135"/>
+			<referrer name="OnDialogResponse"/>
+			<dependency name="CreateVehicle"/>
+			<dependency name="GetPlayerName"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetVehicleHealth"/>
+			<dependency name="SetVehicleNumberPlate"/>
+			<dependency name="format"/>
+			<param name="playerid">
+			</param>
+			<param name="modelid">
+			</param>
+			<param name="x">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="y">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="z">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="r">
+				<paraminfo>Float </paraminfo>
+			</param>
+		</member>
+		<member name="M:credits" syntax="credits(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="6"/>
+			<dependency name="SendClientMessage"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:cveh" syntax="cveh(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="83"/>
+			<dependency name="GetPlayerState"/>
+			<dependency name="GetPlayerVehicleID"/>
+			<dependency name="GetVehicleParamsEx"/>
+			<dependency name="SEM"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetVehicleParamsEx"/>
+			<dependency name="WPM"/>
+			<dependency name="false"/>
+			<dependency name="sscanf"/>
+			<dependency name="strcmp"/>
+			<dependency name="true"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:discord" syntax="discord(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="6"/>
+			<dependency name="SendClientMessage"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:dropguns" syntax="dropguns(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="269"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="IsPlayerInRangeOfPoint"/>
+			<dependency name="ResetPlayerWeapons"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="format"/>
+			<dependency name="getPlayerName"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:fcar" syntax="fcar(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="10"/>
+			<dependency name="IsPlayerInRangeOfPoint"/>
+			<dependency name="ShowPlayerDialog"/>
+			<dependency name="isPlayerInFrak"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:flip" syntax="flip(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="7"/>
+			<dependency name="GetPlayerVehicleID"/>
+			<dependency name="IsPlayerInAnyVehicle"/>
+			<dependency name="SEM"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetVehicleZAngle"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:floatround" syntax="floatround()">
+			<stacksize value="1"/>
+			<referrer name="getPlayerSpeed"/>
+		</member>
+		<member name="M:floatsqroot" syntax="floatsqroot()">
+			<stacksize value="1"/>
+			<referrer name="getPlayerSpeed"/>
+		</member>
+		<member name="M:format" syntax="format()">
+			<stacksize value="1"/>
+			<referrer name="sekunde"/>
+			<referrer name="OnPlayerDisconnect"/>
+			<referrer name="saveCarToDB"/>
+			<referrer name="OnPlayerSpawn"/>
+			<referrer name="OnPlayerDeath"/>
+			<referrer name="OnPlayerText"/>
+			<referrer name="createCar"/>
+			<referrer name="intinfo"/>
+			<referrer name="showfill"/>
+			<referrer name="time"/>
+			<referrer name="skininfo"/>
+			<referrer name="dropguns"/>
+			<referrer name="showpos"/>
+			<referrer name="car"/>
+			<referrer name="houses"/>
+			<referrer name="vehicles"/>
+			<referrer name="hduty"/>
+			<referrer name="id"/>
+			<referrer name="clear"/>
+			<referrer name="su"/>
+			<referrer name="inv"/>
+			<referrer name="get"/>
+			<referrer name="use"/>
+			<referrer name="accept"/>
+			<referrer name="annehmen"/>
+			<referrer name="getcarowner"/>
+			<referrer name="OnDialogResponse"/>
+		</member>
+		<member name="M:get" syntax="get(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="331"/>
+			<dependency name="GetPlayerMoney"/>
+			<dependency name="IsPlayerInRangeOfPoint"/>
+			<dependency name="SEM"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetPlayerMoney"/>
+			<dependency name="WPM"/>
+			<dependency name="false"/>
+			<dependency name="format"/>
+			<dependency name="isPlayerinStaat"/>
+			<dependency name="sscanf"/>
+			<dependency name="strcmp"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:getFreeCarID" syntax="getFreeCarID()">
+			<stacksize value="2"/>
+			<referrer name="OnPlayerCarsLoad"/>
+		</member>
+		<member name="M:getFreeHausID" syntax="getFreeHausID()">
+			<stacksize value="2"/>
+		</member>
+		<member name="M:getPlayerName" syntax="getPlayerName(playerid)">
+			<stacksize value="6"/>
+			<referrer name="saveCarToDB"/>
+			<referrer name="OnPlayerSpawn"/>
+			<referrer name="OnPlayerText"/>
+			<referrer name="dropguns"/>
+			<referrer name="houses"/>
+			<referrer name="vehicles"/>
+			<referrer name="hduty"/>
+			<referrer name="id"/>
+			<referrer name="clear"/>
+			<referrer name="use"/>
+			<referrer name="accept"/>
+			<referrer name="annehmen"/>
+			<referrer name="buyhouse"/>
+			<referrer name="OnDialogResponse"/>
+			<dependency name="GetPlayerName"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:getPlayerSpeed" syntax="getPlayerSpeed(playerid)">
+			<stacksize value="11"/>
+			<referrer name="sekunde"/>
+			<dependency name="GetPlayerVehicleID"/>
+			<dependency name="GetPlayerVelocity"/>
+			<dependency name="GetVehicleVelocity"/>
+			<dependency name="IsPlayerInAnyVehicle"/>
+			<dependency name="floatround"/>
+			<dependency name="floatsqroot"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:getVehicleName" syntax="getVehicleName()">
+			<stacksize value="1"/>
+			<referrer name="sekunde"/>
+			<referrer name="vehicles"/>
+		</member>
+		<member name="M:getcarowner" syntax="getcarowner(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="140"/>
+			<dependency name="GetVehiclePos"/>
+			<dependency name="IsPlayerInRangeOfPoint"/>
+			<dependency name="SEM"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="format"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:getdate" syntax="getdate()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerDisconnect"/>
+			<referrer name="OnPlayerSpawn"/>
+		</member>
+		<member name="M:getfrang" syntax="getfrang(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="7"/>
+			<dependency name="SendClientMessage"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:gettime" syntax="gettime()">
+			<stacksize value="1"/>
+			<referrer name="OnGameModeInit"/>
+			<referrer name="sekunde"/>
+			<referrer name="stunde"/>
+			<referrer name="OnPlayerDisconnect"/>
+			<referrer name="OnPlayerSpawn"/>
+			<referrer name="time"/>
+		</member>
+		<member name="M:hatAutoMotor" syntax="hatAutoMotor()">
+			<stacksize value="1"/>
+			<referrer name="sekunde"/>
+		</member>
+		<member name="M:hatPlayerHaus" syntax="hatPlayerHaus()">
+			<stacksize value="1"/>
+			<referrer name="buyhouse"/>
+			<referrer name="OnDialogResponse"/>
+		</member>
+		<member name="M:hduty" syntax="hduty(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="135"/>
+			<dependency name="GivePlayerWeapon"/>
+			<dependency name="IsPlayerConnected"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetPlayerArmour"/>
+			<dependency name="SetPlayerHealth"/>
+			<dependency name="format"/>
+			<dependency name="getPlayerName"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:houses" syntax="houses(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="263"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="false"/>
+			<dependency name="format"/>
+			<dependency name="getPlayerName"/>
+			<dependency name="strcmp"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:id" syntax="id(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="528"/>
+			<dependency name="GetPlayerArmour"/>
+			<dependency name="GetPlayerHealth"/>
+			<dependency name="GetPlayerPing"/>
+			<dependency name="GetPlayerScore"/>
+			<dependency name="IsPlayerConnected"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="WPM"/>
+			<dependency name="format"/>
+			<dependency name="getPlayerName"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:intinfo" syntax="intinfo(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="265"/>
+			<dependency name="GetPlayerInterior"/>
+			<dependency name="GetPlayerVirtualWorld"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="format"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:inv" syntax="inv(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="1031"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="format"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:isMotorOn" syntax="isMotorOn()">
+			<stacksize value="1"/>
+			<referrer name="sekunde"/>
+		</member>
+		<member name="M:isPlayerInFrak" syntax="isPlayerInFrak()">
+			<stacksize value="1"/>
+			<referrer name="fcar"/>
+			<referrer name="OnPlayerKeyStateChange"/>
+		</member>
+		<member name="M:isPlayerInRangeOfFrakEnterPoint" syntax="isPlayerInRangeOfFrakEnterPoint(playerid)">
+			<attribute name="public"/>
+			<stacksize value="6"/>
+			<referrer name="OnPlayerKeyStateChange"/>
+			<dependency name="IsPlayerInRangeOfPoint"/>
+			<dependency name="SetPlayerInterior"/>
+			<dependency name="SetPlayerPos"/>
+			<dependency name="SetPlayerVirtualWorld"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:isPlayerInRangeOfFrakExitPoint" syntax="isPlayerInRangeOfFrakExitPoint(playerid)">
+			<attribute name="public"/>
+			<stacksize value="6"/>
+			<referrer name="OnPlayerKeyStateChange"/>
+			<dependency name="IsPlayerInRangeOfPoint"/>
+			<dependency name="SetPlayerInterior"/>
+			<dependency name="SetPlayerPos"/>
+			<dependency name="SetPlayerVirtualWorld"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:isPlayerinBadFrak" syntax="isPlayerinBadFrak()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerSpawn"/>
+		</member>
+		<member name="M:isPlayerinStaat" syntax="isPlayerinStaat()">
+			<stacksize value="1"/>
+			<referrer name="clear"/>
+			<referrer name="get"/>
+		</member>
+		<member name="M:isaduty" syntax="isaduty()">
+			<stacksize value="1"/>
+			<referrer name="OnDialogResponse"/>
+		</member>
+		<member name="M:loadBizes" syntax="loadBizes()">
+			<stacksize value="1"/>
+			<referrer name="OnGameModeInit"/>
+		</member>
+		<member name="M:loadJobs" syntax="loadJobs()">
+			<stacksize value="1"/>
+			<referrer name="OnGameModeInit"/>
+		</member>
+		<member name="M:loadPlayerCars" syntax="loadPlayerCars(playerid)">
+			<stacksize value="136"/>
+			<dependency name="mysql_format"/>
+			<dependency name="mysql_tquery"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:loadfraks" syntax="loadfraks()">
+			<stacksize value="1"/>
+			<referrer name="OnGameModeInit"/>
+		</member>
+		<member name="M:loadiraum" syntax="loadiraum()">
+			<stacksize value="1"/>
+			<referrer name="OnGameModeInit"/>
+		</member>
+		<member name="M:mysql_close" syntax="mysql_close()">
+			<stacksize value="1"/>
+			<referrer name="OnGameModeExit"/>
+		</member>
+		<member name="M:mysql_connect" syntax="mysql_connect()">
+			<stacksize value="1"/>
+			<referrer name="OnGameModeInit"/>
+		</member>
+		<member name="M:mysql_escape_string" syntax="mysql_escape_string()">
+			<stacksize value="1"/>
+			<referrer name="OnDialogResponse"/>
+		</member>
+		<member name="M:mysql_format" syntax="mysql_format()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerConnect"/>
+			<referrer name="OnPlayerDisconnect"/>
+			<referrer name="loadPlayerCars"/>
+			<referrer name="OnDialogResponse"/>
+		</member>
+		<member name="M:mysql_function_query" syntax="mysql_function_query()">
+			<stacksize value="1"/>
+			<referrer name="saveCarToDB"/>
+		</member>
+		<member name="M:mysql_log" syntax="mysql_log()">
+			<stacksize value="1"/>
+			<referrer name="OnGameModeInit"/>
+		</member>
+		<member name="M:mysql_tquery" syntax="mysql_tquery()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerConnect"/>
+			<referrer name="OnPlayerDisconnect"/>
+			<referrer name="loadPlayerCars"/>
+			<referrer name="OnDialogResponse"/>
+		</member>
+		<member name="M:nichts" syntax="nichts(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="6"/>
+			<dependency name="SendClientMessage"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:play" syntax="play(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="10"/>
+			<dependency name="ShowPlayerDialog"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:print" syntax="print()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerDisconnect"/>
+		</member>
+		<member name="M:printf" syntax="printf()">
+			<stacksize value="1"/>
+			<referrer name="OnGameModeInit"/>
+			<referrer name="OnGameModeExit"/>
+			<referrer name="showpos"/>
+			<referrer name="car"/>
+		</member>
+		<member name="M:random" syntax="random()">
+			<stacksize value="1"/>
+			<referrer name="OnDialogResponse"/>
+		</member>
+		<member name="M:resetPlayer" syntax="resetPlayer()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerDisconnect"/>
+		</member>
+		<member name="M:resetnoclip" syntax="resetnoclip()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerConnect"/>
+		</member>
+		<member name="M:saveCarToDB" syntax="saveCarToDB(playerid, carid)">
+			<stacksize value="137"/>
+			<dependency name="format"/>
+			<dependency name="getPlayerName"/>
+			<dependency name="mysql_function_query"/>
+			<dependency name="true"/>
+			<param name="playerid">
+			</param>
+			<param name="carid">
+			</param>
+		</member>
+		<member name="M:saveHaus" syntax="saveHaus()">
+			<stacksize value="1"/>
+			<referrer name="buyhouse"/>
+		</member>
+		<member name="M:savePlayer" syntax="savePlayer()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerDisconnect"/>
+			<referrer name="saveallplayers"/>
+		</member>
+		<member name="M:saveallplayers" syntax="saveallplayers()">
+			<stacksize value="5"/>
+			<dependency name="savePlayer"/>
+		</member>
+		<member name="M:savefraks" syntax="savefraks()">
+			<stacksize value="1"/>
+			<referrer name="OnGameModeExit"/>
+		</member>
+		<member name="M:sekunde" syntax="sekunde()">
+			<attribute name="public"/>
+			<stacksize value="267"/>
+			<dependency name="GetPlayerVehicleID"/>
+			<dependency name="GetTimerRemaining"/>
+			<dependency name="GetVehicleModel"/>
+			<dependency name="IsPlayerConnected"/>
+			<dependency name="IsPlayerInAnyVehicle"/>
+			<dependency name="PlayerTextDrawSetString"/>
+			<dependency name="SendClientMessageToAll"/>
+			<dependency name="TextDrawSetString"/>
+			<dependency name="format"/>
+			<dependency name="getPlayerSpeed"/>
+			<dependency name="getVehicleName"/>
+			<dependency name="gettime"/>
+			<dependency name="hatAutoMotor"/>
+			<dependency name="isMotorOn"/>
+			<dependency name="stopMotor"/>
+			<dependency name="stundentimer"/>
+		</member>
+		<member name="M:setfskin" syntax="setfskin(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="9"/>
+			<dependency name="SetPlayerSkin"/>
+			<dependency name="WPM"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:showfill" syntax="showfill(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="72"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="format"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:showpos" syntax="showpos(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="213"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="WPM"/>
+			<dependency name="format"/>
+			<dependency name="printf"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:skininfo" syntax="skininfo(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="136"/>
+			<dependency name="GetPlayerSkin"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="format"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:spawnchange" syntax="spawnchange(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="10"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="ShowPlayerDialog"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:sscanf" syntax="sscanf()">
+			<stacksize value="1"/>
+			<referrer name="showfill"/>
+			<referrer name="vcolor"/>
+			<referrer name="showpos"/>
+			<referrer name="car"/>
+			<referrer name="setfskin"/>
+			<referrer name="id"/>
+			<referrer name="clear"/>
+			<referrer name="su"/>
+			<referrer name="get"/>
+			<referrer name="use"/>
+			<referrer name="accept"/>
+			<referrer name="v"/>
+			<referrer name="cveh"/>
+			<referrer name="GetPlayerID"/>
+		</member>
+		<member name="M:staatsequip" syntax="staatsequip(playerid)">
+			<stacksize value="6"/>
+			<dependency name="GivePlayerWeapon"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:startbus" syntax="startbus(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="16"/>
+			<dependency name="CreateVehicle"/>
+			<dependency name="GetPlayerFacingAngle"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="IsPlayerInRangeOfPoint"/>
+			<dependency name="PutPlayerInVehicle"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetPVarInt"/>
+			<dependency name="SetPlayerCheckpoint"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:stopMotor" syntax="stopMotor()">
+			<stacksize value="1"/>
+			<referrer name="sekunde"/>
+		</member>
+		<member name="M:stopstream" syntax="stopstream(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="4"/>
+			<dependency name="StopAudioStreamForPlayer"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:strcmp" syntax="strcmp()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerSpawn"/>
+			<referrer name="car"/>
+			<referrer name="houses"/>
+			<referrer name="vehicles"/>
+			<referrer name="get"/>
+			<referrer name="use"/>
+			<referrer name="accept"/>
+			<referrer name="cveh"/>
+		</member>
+		<member name="M:strlen" syntax="strlen()">
+			<stacksize value="1"/>
+			<referrer name="OnPlayerSpawn"/>
+			<referrer name="buyhouse"/>
+			<referrer name="OnDialogResponse"/>
+		</member>
+		<member name="M:strmid" syntax="strmid()">
+			<stacksize value="1"/>
+			<referrer name="buyhouse"/>
+		</member>
+		<member name="M:stunde" syntax="stunde()">
+			<attribute name="public"/>
+			<stacksize value="9"/>
+			<dependency name="SetWorldTime"/>
+			<dependency name="changeweather"/>
+			<dependency name="gettime"/>
+		</member>
+		<member name="M:su" syntax="su(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="139"/>
+			<dependency name="IsPlayerConnected"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetPlayerWantedLevel"/>
+			<dependency name="WPM"/>
+			<dependency name="format"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:suicide" syntax="suicide(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="6"/>
+			<dependency name="SCM"/>
+			<dependency name="SetPlayerArmour"/>
+			<dependency name="SetPlayerHealth"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:time" syntax="time(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="297"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="format"/>
+			<dependency name="gettime"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:trade" syntax="trade(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="10"/>
+			<dependency name="ShowPlayerDialog"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:unfreezePlayer" syntax="unfreezePlayer(playerid)">
+			<attribute name="public"/>
+			<stacksize value="5"/>
+			<dependency name="TogglePlayerControllable"/>
+			<dependency name="true"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:updateHaus" syntax="updateHaus()">
+			<stacksize value="1"/>
+			<referrer name="buyhouse"/>
+		</member>
+		<member name="M:use" syntax="use(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="334"/>
+			<dependency name="GetPlayerHealth"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="IsPlayerInRangeOfPoint"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetPlayerHealth"/>
+			<dependency name="WPM"/>
+			<dependency name="false"/>
+			<dependency name="format"/>
+			<dependency name="getPlayerName"/>
+			<dependency name="sscanf"/>
+			<dependency name="strcmp"/>
+			<dependency name="true"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:v" syntax="v(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="16"/>
+			<dependency name="CreateVehicle"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="WPM"/>
+			<dependency name="false"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:vcolor" syntax="vcolor(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="11"/>
+			<dependency name="ChangeVehicleColours"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:vehicles" syntax="vehicles(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="266"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="format"/>
+			<dependency name="getPlayerName"/>
+			<dependency name="getVehicleName"/>
+			<dependency name="strcmp"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+
+	</members>
+</doc>

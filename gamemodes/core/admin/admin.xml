@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet href="file:///C|/Users/ioann/OneDrive/Projekte/mein SAMP Server/openmp version(normal)/qawno/xml/pawndoc.xsl" type="text/xsl"?>
+<doc source="C:\Users\ioann\OneDrive\Projekte\mein SAMP Server\openmp version(normal)\gamemodes\core\admin\admin.pwn">
+	<assembly>
+		<name>admin.pwn</name>
+	</assembly>
+	<members>
+
+		<!-- enumerations -->
+
+		<!-- constants -->
+
+		<!-- variables -->
+		<member name="F:__date">
+		</member>
+		<member name="F:__file">
+		</member>
+		<member name="F:__time">
+		</member>
+
+		<!-- functions -->
+		<member name="M:AdminRank" syntax="AdminRank(playerid)">
+			<stacksize value="33"/>
+			<dependency name="AdminRank"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:Ban" syntax="Ban()">
+			<stacksize value="1"/>
+			<referrer name="pBan"/>
+		</member>
+		<member name="M:GetPVarInt" syntax="GetPVarInt()">
+			<stacksize value="1"/>
+			<referrer name="isaduty"/>
+		</member>
+		<member name="M:IsPlayerConnected" syntax="IsPlayerConnected()">
+			<stacksize value="1"/>
+			<referrer name="SendAdminMessage"/>
+			<referrer name="SendTeamMessage"/>
+		</member>
+		<member name="M:Kick" syntax="Kick()">
+			<stacksize value="1"/>
+			<referrer name="KickEx"/>
+		</member>
+		<member name="M:KickEx" syntax="KickEx(adminID, kickid, reason[])">
+			<stacksize value="137"/>
+			<dependency name="Kick"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SendClientMessageToAll"/>
+			<dependency name="format"/>
+			<dependency name="getPlayerName"/>
+			<dependency name="printf"/>
+			<param name="adminID">
+			</param>
+			<param name="kickid">
+			</param>
+			<param name="reason">
+				<paraminfo> [256] </paraminfo>
+			</param>
+		</member>
+		<member name="M:SendAdminMessage" syntax="SendAdminMessage(adminlvl, color, string[])">
+			<stacksize value="7"/>
+			<dependency name="IsPlayerConnected"/>
+			<dependency name="SendClientMessage"/>
+			<param name="adminlvl">
+			</param>
+			<param name="color">
+			</param>
+			<param name="string">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:SendClientMessage" syntax="SendClientMessage()">
+			<stacksize value="1"/>
+			<referrer name="KickEx"/>
+			<referrer name="pBan"/>
+			<referrer name="SendAdminMessage"/>
+			<referrer name="SendTeamMessage"/>
+		</member>
+		<member name="M:SendClientMessageToAll" syntax="SendClientMessageToAll()">
+			<stacksize value="1"/>
+			<referrer name="KickEx"/>
+			<referrer name="pBan"/>
+			<referrer name="changeweather"/>
+		</member>
+		<member name="M:SendTeamMessage" syntax="SendTeamMessage(color, string[])">
+			<stacksize value="7"/>
+			<dependency name="IsPlayerConnected"/>
+			<dependency name="SendClientMessage"/>
+			<param name="color">
+			</param>
+			<param name="string">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:SetWeather" syntax="SetWeather()">
+			<stacksize value="1"/>
+			<referrer name="changeweather"/>
+		</member>
+		<member name="M:ShowPlayerDialog" syntax="ShowPlayerDialog()">
+			<stacksize value="1"/>
+			<referrer name="pBan"/>
+		</member>
+		<member name="M:changeweather" syntax="changeweather()">
+			<stacksize value="6"/>
+			<dependency name="SendClientMessageToAll"/>
+			<dependency name="SetWeather"/>
+			<dependency name="print"/>
+			<dependency name="random"/>
+		</member>
+		<member name="M:format" syntax="format()">
+			<stacksize value="1"/>
+			<referrer name="KickEx"/>
+			<referrer name="pBan"/>
+		</member>
+		<member name="M:getPlayerName" syntax="getPlayerName()">
+			<stacksize value="1"/>
+			<referrer name="KickEx"/>
+			<referrer name="pBan"/>
+		</member>
+		<member name="M:isAdmin" syntax="isAdmin(playerid, a_level)">
+			<stacksize value="1"/>
+			<referrer name="isaduty"/>
+			<param name="playerid">
+			</param>
+			<param name="a_level">
+			</param>
+		</member>
+		<member name="M:isAlevel" syntax="isAlevel(playerid, a_level)">
+			<stacksize value="1"/>
+			<param name="playerid">
+			</param>
+			<param name="a_level">
+			</param>
+		</member>
+		<member name="M:isaduty" syntax="isaduty(playerid)">
+			<stacksize value="5"/>
+			<dependency name="GetPVarInt"/>
+			<dependency name="isAdmin"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:pBan" syntax="pBan(adminID, banid, reason[])">
+			<stacksize value="522"/>
+			<dependency name="Ban"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SendClientMessageToAll"/>
+			<dependency name="ShowPlayerDialog"/>
+			<dependency name="format"/>
+			<dependency name="getPlayerName"/>
+			<param name="adminID">
+			</param>
+			<param name="banid">
+			</param>
+			<param name="reason">
+				<paraminfo> [256] </paraminfo>
+			</param>
+		</member>
+		<member name="M:print" syntax="print()">
+			<stacksize value="1"/>
+			<referrer name="changeweather"/>
+		</member>
+		<member name="M:printf" syntax="printf()">
+			<stacksize value="1"/>
+			<referrer name="KickEx"/>
+		</member>
+		<member name="M:random" syntax="random()">
+			<stacksize value="1"/>
+			<referrer name="changeweather"/>
+		</member>
+
+	</members>
+</doc>

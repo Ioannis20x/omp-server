@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet href="file:///C|/Users/ioann/OneDrive/Projekte/mein SAMP Server/openmp version(normal)/qawno/xml/pawndoc.xsl" type="text/xsl"?>
+<doc source="C:\Users\ioann\OneDrive\Projekte\mein SAMP Server\openmp version(normal)\gamemodes\cmds\admin\admin.pwn">
+	<assembly>
+		<name>admin.pwn</name>
+	</assembly>
+	<members>
+
+		<!-- enumerations -->
+
+		<!-- constants -->
+		<member name="C:true" value="1">
+			<tagname value="bool"/>
+			<referrer name="asellhouse"/>
+		</member>
+
+		<!-- variables -->
+		<member name="F:__date">
+		</member>
+		<member name="F:__file">
+		</member>
+		<member name="F:__time">
+		</member>
+
+		<!-- functions -->
+		<member name="M:Delete3DTextLabel" syntax="Delete3DTextLabel()">
+			<stacksize value="1"/>
+			<referrer name="deletehouse"/>
+		</member>
+		<member name="M:DestroyPickup" syntax="DestroyPickup()">
+			<stacksize value="1"/>
+			<referrer name="deletehouse"/>
+		</member>
+		<member name="M:DestroyVehicle" syntax="DestroyVehicle()">
+			<stacksize value="1"/>
+			<referrer name="delveh"/>
+		</member>
+		<member name="M:GetPlayerName" syntax="GetPlayerName()">
+			<stacksize value="1"/>
+			<referrer name="asellhouse"/>
+		</member>
+		<member name="M:GetPlayerPos" syntax="GetPlayerPos()">
+			<stacksize value="1"/>
+			<referrer name="createhouse"/>
+		</member>
+		<member name="M:GivePlayerMoney" syntax="GivePlayerMoney()">
+			<stacksize value="1"/>
+			<referrer name="asellhouse"/>
+		</member>
+		<member name="M:IsPlayerInRangeOfPoint" syntax="IsPlayerInRangeOfPoint()">
+			<stacksize value="1"/>
+			<referrer name="deletehouse"/>
+			<referrer name="sethouselevel"/>
+			<referrer name="sethouseprice"/>
+			<referrer name="asellhouse"/>
+		</member>
+		<member name="M:IsValidVehicle" syntax="IsValidVehicle()">
+			<stacksize value="1"/>
+			<referrer name="delveh"/>
+		</member>
+		<member name="M:SEM" syntax="SEM()">
+			<stacksize value="1"/>
+			<referrer name="sethouselevel"/>
+			<referrer name="sethouseinterior"/>
+			<referrer name="sethouseprice"/>
+			<referrer name="createhouse"/>
+			<referrer name="asellhouse"/>
+			<referrer name="gotoxyz"/>
+		</member>
+		<member name="M:SendAdminMessage" syntax="SendAdminMessage()">
+			<stacksize value="1"/>
+			<referrer name="reviveplayer"/>
+		</member>
+		<member name="M:SendClientMessage" syntax="SendClientMessage()">
+			<stacksize value="1"/>
+			<referrer name="ainvite"/>
+			<referrer name="auninvite"/>
+			<referrer name="respawnveh"/>
+			<referrer name="delveh"/>
+			<referrer name="fly"/>
+			<referrer name="setfill"/>
+			<referrer name="reviveplayer"/>
+			<referrer name="sethp"/>
+			<referrer name="setarmour"/>
+			<referrer name="deletehouse"/>
+			<referrer name="gotoxyz"/>
+		</member>
+		<member name="M:SetPVarInt" syntax="SetPVarInt()">
+			<stacksize value="1"/>
+			<referrer name="auninvite"/>
+		</member>
+		<member name="M:SetPlayerArmour" syntax="SetPlayerArmour()">
+			<stacksize value="1"/>
+			<referrer name="setarmour"/>
+		</member>
+		<member name="M:SetPlayerHealth" syntax="SetPlayerHealth()">
+			<stacksize value="1"/>
+			<referrer name="sethp"/>
+		</member>
+		<member name="M:SetPlayerPos" syntax="SetPlayerPos()">
+			<stacksize value="1"/>
+			<referrer name="reviveplayer"/>
+			<referrer name="gotoxyz"/>
+		</member>
+		<member name="M:SetPlayerSkin" syntax="SetPlayerSkin()">
+			<stacksize value="1"/>
+			<referrer name="auninvite"/>
+		</member>
+		<member name="M:SetVehicleToRespawn" syntax="SetVehicleToRespawn()">
+			<stacksize value="1"/>
+			<referrer name="respawnveh"/>
+		</member>
+		<member name="M:SpawnPlayer" syntax="SpawnPlayer()">
+			<stacksize value="1"/>
+			<referrer name="ainvite"/>
+			<referrer name="auninvite"/>
+		</member>
+		<member name="M:WPM" syntax="WPM()">
+			<stacksize value="1"/>
+			<referrer name="respawnveh"/>
+			<referrer name="delveh"/>
+			<referrer name="setfill"/>
+			<referrer name="reviveplayer"/>
+			<referrer name="sethouselevel"/>
+			<referrer name="sethouseinterior"/>
+			<referrer name="sethouseprice"/>
+		</member>
+		<member name="M:ainvite" syntax="ainvite(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="202"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SpawnPlayer"/>
+			<dependency name="format"/>
+			<dependency name="getPlayerName"/>
+			<dependency name="isAdmin"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:asellhouse" syntax="asellhouse(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="6"/>
+			<dependency name="GetPlayerName"/>
+			<dependency name="GivePlayerMoney"/>
+			<dependency name="IsPlayerInRangeOfPoint"/>
+			<dependency name="SEM"/>
+			<dependency name="isAdmin"/>
+			<dependency name="saveHaus"/>
+			<dependency name="strcmp"/>
+			<dependency name="strlen"/>
+			<dependency name="strmid"/>
+			<dependency name="true"/>
+			<dependency name="updateHaus"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:auninvite" syntax="auninvite(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="201"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetPVarInt"/>
+			<dependency name="SetPlayerSkin"/>
+			<dependency name="SpawnPlayer"/>
+			<dependency name="format"/>
+			<dependency name="getPlayerName"/>
+			<dependency name="isAdmin"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:createhouse" syntax="createhouse(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="270"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="SEM"/>
+			<dependency name="getFreeHausID"/>
+			<dependency name="isAdmin"/>
+			<dependency name="mysql_format"/>
+			<dependency name="mysql_tquery"/>
+			<dependency name="strmid"/>
+			<dependency name="updateHaus"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:deletehouse" syntax="deletehouse(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="136"/>
+			<dependency name="Delete3DTextLabel"/>
+			<dependency name="DestroyPickup"/>
+			<dependency name="IsPlayerInRangeOfPoint"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="isAdmin"/>
+			<dependency name="mysql_format"/>
+			<dependency name="mysql_tquery"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:delveh" syntax="delveh(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="7"/>
+			<dependency name="DestroyVehicle"/>
+			<dependency name="IsValidVehicle"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="WPM"/>
+			<dependency name="isAdmin"/>
+			<dependency name="isaduty"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:fly" syntax="fly(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="6"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="isAdmin"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:format" syntax="format()">
+			<stacksize value="1"/>
+			<referrer name="ainvite"/>
+			<referrer name="auninvite"/>
+			<referrer name="reviveplayer"/>
+		</member>
+		<member name="M:getFreeHausID" syntax="getFreeHausID()">
+			<stacksize value="1"/>
+			<referrer name="createhouse"/>
+		</member>
+		<member name="M:getPlayerName" syntax="getPlayerName()">
+			<stacksize value="1"/>
+			<referrer name="ainvite"/>
+			<referrer name="auninvite"/>
+			<referrer name="reviveplayer"/>
+		</member>
+		<member name="M:gotoxyz" syntax="gotoxyz(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="11"/>
+			<dependency name="SEM"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetPlayerPos"/>
+			<dependency name="isAdmin"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:isAdmin" syntax="isAdmin()">
+			<stacksize value="1"/>
+			<referrer name="ainvite"/>
+			<referrer name="auninvite"/>
+			<referrer name="respawnveh"/>
+			<referrer name="delveh"/>
+			<referrer name="fly"/>
+			<referrer name="setfill"/>
+			<referrer name="reviveplayer"/>
+			<referrer name="sethp"/>
+			<referrer name="setarmour"/>
+			<referrer name="deletehouse"/>
+			<referrer name="sethouselevel"/>
+			<referrer name="sethouseinterior"/>
+			<referrer name="sethouseprice"/>
+			<referrer name="createhouse"/>
+			<referrer name="asellhouse"/>
+			<referrer name="gotoxyz"/>
+		</member>
+		<member name="M:isaduty" syntax="isaduty()">
+			<stacksize value="1"/>
+			<referrer name="delveh"/>
+			<referrer name="reviveplayer"/>
+		</member>
+		<member name="M:mysql_format" syntax="mysql_format()">
+			<stacksize value="1"/>
+			<referrer name="deletehouse"/>
+			<referrer name="createhouse"/>
+		</member>
+		<member name="M:mysql_tquery" syntax="mysql_tquery()">
+			<stacksize value="1"/>
+			<referrer name="deletehouse"/>
+			<referrer name="createhouse"/>
+		</member>
+		<member name="M:respawnveh" syntax="respawnveh(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="7"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetVehicleToRespawn"/>
+			<dependency name="WPM"/>
+			<dependency name="isAdmin"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:reviveplayer" syntax="reviveplayer(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="137"/>
+			<dependency name="SendAdminMessage"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetPlayerPos"/>
+			<dependency name="WPM"/>
+			<dependency name="format"/>
+			<dependency name="getPlayerName"/>
+			<dependency name="isAdmin"/>
+			<dependency name="isaduty"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:saveHaus" syntax="saveHaus()">
+			<stacksize value="1"/>
+			<referrer name="sethouselevel"/>
+			<referrer name="sethouseinterior"/>
+			<referrer name="sethouseprice"/>
+			<referrer name="asellhouse"/>
+		</member>
+		<member name="M:setarmour" syntax="setarmour(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="9"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetPlayerArmour"/>
+			<dependency name="isAdmin"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:setfill" syntax="setfill(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="9"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="WPM"/>
+			<dependency name="isAdmin"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:sethouseinterior" syntax="sethouseinterior(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="9"/>
+			<dependency name="SEM"/>
+			<dependency name="WPM"/>
+			<dependency name="isAdmin"/>
+			<dependency name="saveHaus"/>
+			<dependency name="sscanf"/>
+			<dependency name="updateHaus"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:sethouselevel" syntax="sethouselevel(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="7"/>
+			<dependency name="IsPlayerInRangeOfPoint"/>
+			<dependency name="SEM"/>
+			<dependency name="WPM"/>
+			<dependency name="isAdmin"/>
+			<dependency name="saveHaus"/>
+			<dependency name="sscanf"/>
+			<dependency name="updateHaus"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:sethouseprice" syntax="sethouseprice(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="7"/>
+			<dependency name="IsPlayerInRangeOfPoint"/>
+			<dependency name="SEM"/>
+			<dependency name="WPM"/>
+			<dependency name="isAdmin"/>
+			<dependency name="saveHaus"/>
+			<dependency name="sscanf"/>
+			<dependency name="updateHaus"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:sethp" syntax="sethp(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="9"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetPlayerHealth"/>
+			<dependency name="isAdmin"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:sscanf" syntax="sscanf()">
+			<stacksize value="1"/>
+			<referrer name="ainvite"/>
+			<referrer name="auninvite"/>
+			<referrer name="respawnveh"/>
+			<referrer name="delveh"/>
+			<referrer name="setfill"/>
+			<referrer name="reviveplayer"/>
+			<referrer name="sethp"/>
+			<referrer name="setarmour"/>
+			<referrer name="sethouselevel"/>
+			<referrer name="sethouseinterior"/>
+			<referrer name="sethouseprice"/>
+			<referrer name="gotoxyz"/>
+		</member>
+		<member name="M:strcmp" syntax="strcmp()">
+			<stacksize value="1"/>
+			<referrer name="asellhouse"/>
+		</member>
+		<member name="M:strlen" syntax="strlen()">
+			<stacksize value="1"/>
+			<referrer name="asellhouse"/>
+		</member>
+		<member name="M:strmid" syntax="strmid()">
+			<stacksize value="1"/>
+			<referrer name="createhouse"/>
+			<referrer name="asellhouse"/>
+		</member>
+		<member name="M:updateHaus" syntax="updateHaus()">
+			<stacksize value="1"/>
+			<referrer name="sethouselevel"/>
+			<referrer name="sethouseinterior"/>
+			<referrer name="sethouseprice"/>
+			<referrer name="createhouse"/>
+			<referrer name="asellhouse"/>
+		</member>
+
+	</members>
+</doc>

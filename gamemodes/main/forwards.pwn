@@ -1,0 +1,22 @@
+//forwards
+forward OnUserCheck(playerid);
+forward OnPasswordResponse(playerid);
+forward CarSavedToDB(carid);
+forward sekunde();
+forward OnPlayerCarsLoad(playerid);
+forward OnHausesLoad();
+forward unfreezePlayer(playerid);
+forward OnPlayerRegister(playerid);
+forward OnHausCreated(id);
+forward savefraks();
+forward OnFraksLoad();
+forward loadfraks();
+forward savefrakcars();
+forward loadfrakcars();
+forward NetStatsDisplay();
+forward OnFrakCarsLoad();
+forward isPlayerInRangeOfFrakEnterPoint(playerid);
+forward isPlayerInRangeOfFrakExitPoint(playerid);
+forward loadiraum();
+forward OnIraumLoad();
+forward stunde();

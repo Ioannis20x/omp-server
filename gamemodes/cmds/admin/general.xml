@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet href="file:///C|/Users/ioann/OneDrive/Projekte/mein SAMP Server/openmp version(normal)/qawno/xml/pawndoc.xsl" type="text/xsl"?>
+<doc source="C:\Users\ioann\OneDrive\Projekte\mein SAMP Server\openmp version(normal)\gamemodes\cmds\admin\general.pwn">
+	<assembly>
+		<name>general.pwn</name>
+	</assembly>
+	<members>
+
+		<!-- enumerations -->
+
+		<!-- constants -->
+		<member name="C:false" value="0">
+			<tagname value="bool"/>
+			<referrer name="supveh"/>
+		</member>
+		<member name="C:true" value="1">
+			<tagname value="bool"/>
+			<referrer name="supveh"/>
+		</member>
+
+		<!-- variables -->
+		<member name="F:__date">
+		</member>
+		<member name="F:__file">
+		</member>
+		<member name="F:__time">
+		</member>
+
+		<!-- functions -->
+		<member name="M:AdminRank" syntax="AdminRank()">
+			<stacksize value="1"/>
+			<referrer name="tc"/>
+			<referrer name="aduty"/>
+		</member>
+		<member name="M:CreateVehicle" syntax="CreateVehicle()">
+			<stacksize value="1"/>
+			<referrer name="supveh"/>
+		</member>
+		<member name="M:GetPVarInt" syntax="GetPVarInt()">
+			<stacksize value="1"/>
+			<referrer name="supveh"/>
+		</member>
+		<member name="M:GetPlayerFacingAngle" syntax="GetPlayerFacingAngle()">
+			<stacksize value="1"/>
+			<referrer name="supveh"/>
+		</member>
+		<member name="M:GetPlayerName" syntax="GetPlayerName()">
+			<stacksize value="1"/>
+			<referrer name="aduty"/>
+		</member>
+		<member name="M:GetPlayerPos" syntax="GetPlayerPos()">
+			<stacksize value="1"/>
+			<referrer name="supveh"/>
+		</member>
+		<member name="M:PutPlayerInVehicle" syntax="PutPlayerInVehicle()">
+			<stacksize value="1"/>
+			<referrer name="supveh"/>
+		</member>
+		<member name="M:SendAdminMessage" syntax="SendAdminMessage()">
+			<stacksize value="1"/>
+			<referrer name="tc"/>
+			<referrer name="supveh"/>
+		</member>
+		<member name="M:SendClientMessage" syntax="SendClientMessage()">
+			<stacksize value="1"/>
+			<referrer name="tc"/>
+			<referrer name="ahelp"/>
+			<referrer name="supveh"/>
+		</member>
+		<member name="M:SendClientMessageToAll" syntax="SendClientMessageToAll()">
+			<stacksize value="1"/>
+			<referrer name="aduty"/>
+		</member>
+		<member name="M:SetPVarInt" syntax="SetPVarInt()">
+			<stacksize value="1"/>
+			<referrer name="supveh"/>
+			<referrer name="aduty"/>
+		</member>
+		<member name="M:SetPlayerColor" syntax="SetPlayerColor()">
+			<stacksize value="1"/>
+			<referrer name="aduty"/>
+		</member>
+		<member name="M:SetPlayerName" syntax="SetPlayerName()">
+			<stacksize value="1"/>
+			<referrer name="aduty"/>
+		</member>
+		<member name="M:ShowPlayerDialog" syntax="ShowPlayerDialog()">
+			<stacksize value="1"/>
+			<referrer name="fraks"/>
+		</member>
+		<member name="M:TextDrawHideForPlayer" syntax="TextDrawHideForPlayer()">
+			<stacksize value="1"/>
+			<referrer name="aduty"/>
+		</member>
+		<member name="M:TextDrawShowForPlayer" syntax="TextDrawShowForPlayer()">
+			<stacksize value="1"/>
+			<referrer name="aduty"/>
+		</member>
+		<member name="M:WPM" syntax="WPM()">
+			<stacksize value="1"/>
+			<referrer name="tc"/>
+		</member>
+		<member name="M:aduty" syntax="aduty(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="161"/>
+			<dependency name="AdminRank"/>
+			<dependency name="GetPlayerName"/>
+			<dependency name="SendClientMessageToAll"/>
+			<dependency name="SetPVarInt"/>
+			<dependency name="SetPlayerColor"/>
+			<dependency name="SetPlayerName"/>
+			<dependency name="TextDrawHideForPlayer"/>
+			<dependency name="TextDrawShowForPlayer"/>
+			<dependency name="format"/>
+			<dependency name="getPlayerName"/>
+			<dependency name="isAlevel"/>
+			<dependency name="isaduty"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:ahelp" syntax="ahelp(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="6"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="isAdmin"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:format" syntax="format()">
+			<stacksize value="1"/>
+			<referrer name="tc"/>
+			<referrer name="supveh"/>
+			<referrer name="aduty"/>
+			<referrer name="fraks"/>
+		</member>
+		<member name="M:fraks" syntax="fraks(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="1290"/>
+			<dependency name="ShowPlayerDialog"/>
+			<dependency name="format"/>
+			<dependency name="print"/>
+			<dependency name="printf"/>
+			<dependency name="strcat"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:getPlayerName" syntax="getPlayerName()">
+			<stacksize value="1"/>
+			<referrer name="tc"/>
+			<referrer name="supveh"/>
+			<referrer name="aduty"/>
+		</member>
+		<member name="M:isAdmin" syntax="isAdmin()">
+			<stacksize value="1"/>
+			<referrer name="tc"/>
+			<referrer name="ahelp"/>
+			<referrer name="supveh"/>
+		</member>
+		<member name="M:isAlevel" syntax="isAlevel()">
+			<stacksize value="1"/>
+			<referrer name="aduty"/>
+		</member>
+		<member name="M:isaduty" syntax="isaduty()">
+			<stacksize value="1"/>
+			<referrer name="aduty"/>
+		</member>
+		<member name="M:print" syntax="print()">
+			<stacksize value="1"/>
+			<referrer name="fraks"/>
+		</member>
+		<member name="M:printf" syntax="printf()">
+			<stacksize value="1"/>
+			<referrer name="fraks"/>
+		</member>
+		<member name="M:sscanf" syntax="sscanf()">
+			<stacksize value="1"/>
+			<referrer name="tc"/>
+		</member>
+		<member name="M:strcat" syntax="strcat()">
+			<stacksize value="1"/>
+			<referrer name="fraks"/>
+		</member>
+		<member name="M:supveh" syntax="supveh(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="140"/>
+			<dependency name="CreateVehicle"/>
+			<dependency name="GetPVarInt"/>
+			<dependency name="GetPlayerFacingAngle"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="PutPlayerInVehicle"/>
+			<dependency name="SendAdminMessage"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetPVarInt"/>
+			<dependency name="false"/>
+			<dependency name="format"/>
+			<dependency name="getPlayerName"/>
+			<dependency name="isAdmin"/>
+			<dependency name="true"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:tc" syntax="tc(playerid, params[])">
+			<tagname value="CMD"/>
+			<stacksize value="521"/>
+			<dependency name="AdminRank"/>
+			<dependency name="SendAdminMessage"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="WPM"/>
+			<dependency name="format"/>
+			<dependency name="getPlayerName"/>
+			<dependency name="isAdmin"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+
+	</members>
+</doc>

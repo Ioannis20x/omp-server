@@ -1,0 +1,11 @@
+.vscode/
+components/
+Debug/
+logs/
+models/
+pawno/
+bans.json
+libmariadb.dll
+log-core.dll
+omp-server.exe
+omp-server.pdb
