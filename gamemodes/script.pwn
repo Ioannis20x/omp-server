@@ -42,7 +42,7 @@ new MySQL:dbhandle;
 main()
 {
 	print("Ioannis Testserver");
-	print("Copyright (c) 2019 - 2024 by Ioannis20x - Alle Rechte vorbehalten.\n");
+	print("Copyright (c) 2019 by Ioannis20x - Alle Rechte vorbehalten.\n");
 }
 
 //UTILS
