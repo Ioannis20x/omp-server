@@ -114,8 +114,8 @@ CMD:makeadmin(playerid,params[])
 	new pID,a_level;
 	if(sscanf(params,"ui",pID,a_level))return WPM(playerid,"/makeadmin [playerid] [Adminlevel]");
 	sInfo[pID][padminlevel]=a_level;
-	SendClientMessage(pID,COLOR_YELLOW,"Dein Adminrang wurde geändert.");
-	SendClientMessage(playerid,COLOR_YELLOW,"Du hast den Adminrang geändert.");
+	SendClientMessage(pID,COLOR_YELLOW,"Dein Adminrang wurde geï¿½ndert.");
+	SendClientMessage(playerid,COLOR_YELLOW,"Du hast den Adminrang geï¿½ndert.");
 	savePlayer(pID);
 	return 1;
 }
@@ -190,13 +190,13 @@ CMD:gmx(playerid,params[]){
 	return 1;
 }
 
-
+/*
 CMD:selectaduty(playerid,params[])
 {
 if(isAlevel(playerid,6)){
-ShowPlayerDialog(playerid,DIALOG_ADUTY,DIALOG_STYLE_LIST,"Aduty Menü","ServerOwner\nGroßmogul\nGrößte Instanz\nsilent","Aduty","Abbrechen");
+ShowPlayerDialog(playerid,DIALOG_ADUTY,DIALOG_STYLE_LIST,"Aduty Menï¿½","ServerOwner\nGroÃŸmogul\nGrÃ¶ÃŸte Instanz\nsilent","Aduty","Abbrechen");
 }
 return 1;
 }
-
+*/
 

@@ -39,6 +39,7 @@
 
 new MySQL:dbhandle;
 
+print(dbhandle);
 main()
 {
 	print("Ioannis Testserver");
