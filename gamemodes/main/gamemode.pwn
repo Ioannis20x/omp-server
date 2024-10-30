@@ -30,10 +30,10 @@ public OnGameModeInit()
 	gettime(hour,minute,second);
 	SetWorldTime(hour);
 	
-	//Gebäude laden
+	//Gebï¿½ude laden
 	loadBizes();
 
-	//Häuser laden
+	//Hï¿½user laden
 	LoadHouses();
 
 	loadfraks();
@@ -152,9 +152,9 @@ public sekunde()
 {
 	if(GetTimerRemaining(stundentimer) == 1800000){
 	SendClientMessageToAll(COLOR_WHITE,"[============ SERVERINFO ============]");
-	SendClientMessageToAll(COLOR_BLUE,"Ab sofort existiert ein Discord für diesen Server.");
-	SendClientMessageToAll(COLOR_BLUE,"In diesem werden Changelogs gepostet, Fragen beantwortet und Vorschläge entgegen genommen.");
-	SendClientMessageToAll(COLOR_BLUE,"Falls du eine Idee für den Server hast oder einfach nur auf dem neusten Stand bleiben willst, dann komme auf den Discord.");
+	SendClientMessageToAll(COLOR_BLUE,"Ab sofort existiert ein Discord fÃ¼r diesen Server.");
+	SendClientMessageToAll(COLOR_BLUE,"In diesem werden Changelogs gepostet, Fragen beantwortet und VorschlÃ¤ge entgegen genommen.");
+	SendClientMessageToAll(COLOR_BLUE,"Falls du eine Idee fÃ¼r den Server hast oder einfach nur auf dem neusten Stand bleiben willst, dann komme auf den Discord.");
 	SendClientMessageToAll(COLOR_BLUE,"Serverlink: https://dsc.gg/ioannis");
 	SendClientMessageToAll(COLOR_BLUE,"Ich freue mich auf euch! :)");
 	}
@@ -315,7 +315,7 @@ public OnPlayerDisconnect(playerid, reason)
 	format(szString, sizeof szString, "%s hat den Server verlassen (%s).", playerName, szDisconnectReason[reason]);
 	new Float:x,Float:y,Float:z;
 	GetPlayerPos(playerid,x,y,z);
-	for(new i = 0, j = MAX_PLAYERS; i <= j; i++) //GetPlayerPoolSize ist die höchste online playerid   | i repräsentiert die aktuelle id die gecheckt wird
+	for(new i = 0, j = MAX_PLAYERS; i <= j; i++) //GetPlayerPoolSize ist die hï¿½chste online playerid   | i reprï¿½sentiert die aktuelle id die gecheckt wird
     {
         if(IsPlayerInRangeOfPoint(i, 7.0, x, y, z))
         {
@@ -421,7 +421,7 @@ public OnPlayerSpawn(playerid)
         format(string, sizeof(string), "{CC210A}SERVER:{FFFFFF} Willkommen %s", getPlayerName(playerid));
         SendClientMessage(playerid, COLOR_RED, string);
         if(sInfo[playerid][padminlevel]>=2){
-			SendClientMessage(playerid,COLOR_RED,"SERVER:{FFFFFF} Du bist als Supporter eingeloggt. Vielen Dank für dein Engagement!");
+			SendClientMessage(playerid,COLOR_RED,"SERVER:{FFFFFF} Du bist als Supporter eingeloggt. Vielen Dank fï¿½r dein Engagement!");
 		}
 		if(sInfo[playerid][padminlevel]>=5){
 			SendClientMessage(playerid,COLOR_RED,"SERVER: {FFFFFF}Du bist als Manager eingeloggt und dauerhaft im Admindienst. Sei vorsichtig!");
@@ -429,18 +429,18 @@ public OnPlayerSpawn(playerid)
 
 		if(sInfo[playerid][pfleader]>0){
 			if(sInfo[playerid][pfraktion]==7){
-                SendClientMessage(playerid,COLOR_RED,"SERVER:{FFFFFF} Willkommen zurück Herr Präsident.");
+                SendClientMessage(playerid,COLOR_RED,"SERVER:{FFFFFF} Willkommen zurï¿½ck Herr Prï¿½sident.");
 			}else{
-                SendClientMessage(playerid,COLOR_RED,"SERVER:{FFFFFF} Du bist als Fraktionsleitung eingeloggt. Vielen Dank für dein Engagement!");
+                SendClientMessage(playerid,COLOR_RED,"SERVER:{FFFFFF} Du bist als Fraktionsleitung eingeloggt. Vielen Dank fï¿½r dein Engagement!");
 			}
 		}
-		wstring = "{FFFFFF}Willkommen auf "#SERVERNAME "!\n Das Team wünscht dir viel Spaß beim spielen!\n Bei Fragen oder Problemen kannst du uns gerne auf Discord anschreiben {FF0000}(/discord).";
+		wstring = "{FFFFFF}Willkommen auf "#SERVERNAME "!\n Das Team wï¿½nscht dir viel Spaï¿½ beim spielen!\n Bei Fragen oder Problemen kannst du uns gerne auf Discord anschreiben {FF0000}(/discord).";
 		ShowPlayerDialog(playerid, 563, DIALOG_STYLE_MSGBOX, "Willkommen auf "#SERVERNAME , wstring,"Okay","");
 		
 		
 		
 		#if defined Weihnachten
-			SendClientMessage(playerid, COLOR_RED, "SERVER: {FFFFFF}" #SERVERNAME " wünscht dir frohe Weihnachten.");
+			SendClientMessage(playerid, COLOR_RED, "SERVER: {FFFFFF}" #SERVERNAME " wï¿½nscht dir frohe Weihnachten.");
 		#endif
 		
         if (sInfo[playerid][pfraktion] > 0 && sInfo[playerid][eingeloggt] == 0)
@@ -491,7 +491,7 @@ public OnPlayerDeath(playerid, killerid, WEAPON:reason){
 	sInfo[playerid][pdeaths]++;
 	format(string,sizeof(string),"SERVER: {FFFFFF}Du bist zum %i. Mal gestorben.",sInfo[playerid][pdeaths]);
 	SendClientMessage(playerid,COLOR_RED,string);
-	SendClientMessage(killerid, COLOR_HRED,"Du hast ein Verbrechen begangen ( Vorsätzlicher Mord ). Reporter: Anonym.");
+	SendClientMessage(killerid, COLOR_HRED,"Du hast ein Verbrechen begangen ( Vorsï¿½tzlicher Mord ). Reporter: Anonym.");
 	SetPlayerArmour(playerid,0);
 
 	   //SetPlayerPos(playerid, x, y, z);
@@ -612,7 +612,7 @@ CMD:intinfo(playerid,params[])
 	new vID,iID,wstring[128],istring[128];
 	vID = GetPlayerVirtualWorld(playerid);
 	iID= GetPlayerInterior(playerid);
-	format(istring,sizeof(istring),"Interior Schlüssel: %i",iID);
+	format(istring,sizeof(istring),"Interior Schlï¿½ssel: %i",iID);
 	format(wstring,sizeof(wstring),"Virtuelle Welt: %i",vID);
 	SendClientMessage(playerid,COLOR_GREY,istring);
 	SendClientMessage(playerid,COLOR_GREY,wstring);
@@ -630,7 +630,7 @@ CMD:showfill(playerid,params[])
 {
 	new string[64],vID;
 	if(sscanf(params,"i",vID))return SendClientMessage(playerid,COLOR_GREY,"INFO: /showfill [vID]");
-	format(string,sizeof(string),"Deine Tankfüllung entspricht %i%",tank[vID]);
+	format(string,sizeof(string),"Deine Tankfï¿½llung entspricht %i%",tank[vID]);
 	SendClientMessage(playerid, COLOR_YELLOW,string);
 	return 1;
 }
@@ -686,7 +686,7 @@ CMD:suicide(playerid,params[])
 {
 	SetPlayerHealth(playerid,0.0);
 	SetPlayerArmour(playerid,0.0);
-	SCM(playerid,COLOR_RED,"SERVER: Selbstmord ist keine Lösung! Oder etwa doch?!");
+	SCM(playerid,COLOR_RED,"SERVER: Selbstmord ist keine Lï¿½sung! Oder etwa doch?!");
 	return 1;
 }
 
@@ -696,11 +696,11 @@ CMD:dropguns(playerid,params[])
 ResetPlayerWeapons(playerid);
 new Float:x, Float:y, Float:z,string[256];
 GetPlayerPos(playerid, x,y,z);
-for(new i = 0, j = MAX_PLAYERS; i <= j; i++) //GetPlayerPoolSize ist die höchste online playerid   | i repräsentiert die aktuelle id die gecheckt wird
+for(new i = 0, j = MAX_PLAYERS; i <= j; i++) //GetPlayerPoolSize ist die hï¿½chste online playerid   | i reprï¿½sentiert die aktuelle id die gecheckt wird
  {
 	    if(IsPlayerInRangeOfPoint(i, 7.0, x, y, z))
         {
-        format(string,sizeof(string),"%s lässt seine Waffen fallen.",getPlayerName(playerid));
+        format(string,sizeof(string),"%s lï¿½sst seine Waffen fallen.",getPlayerName(playerid));
 		SendClientMessage(playerid,COLOR_HRED,string);
        }
 }
@@ -763,7 +763,7 @@ CMD:car(playerid,params[])
 		}
 		return 0;
     }
-    printf("Kein gültiges Fahrzeug gefunden!");
+    printf("Kein gï¿½ltiges Fahrzeug gefunden!");
     return 1;
 }
 
@@ -809,7 +809,7 @@ CMD:houses(playerid,params[])
 new string[128];
 new name[128];
 name = getPlayerName(playerid);
-SendClientMessage(playerid,COLOR_HBLUE,"[______________Hausübersicht______________]");
+SendClientMessage(playerid,COLOR_HBLUE,"[______________Hausï¿½bersicht______________]");
 for(new i=0;i<=sizeof(hInfo);i++){
 
 	if(strcmp(hInfo[i][h_besitzer], getPlayerName(playerid), false)==0){
@@ -825,7 +825,7 @@ return 1;
 CMD:vehicles(playerid,params[])
 {
 new string[256];
-SendClientMessage(playerid,COLOR_HBLUE,"[______________Fahrzeugübersicht______________]");
+SendClientMessage(playerid,COLOR_HBLUE,"[______________Fahrzeugï¿½bersicht______________]");
 for(new i=0;i<=MAX_VEHICLES;i++){
 	if(strcmp(cInfo[i][besitzer],getPlayerName(playerid))>=0){
 	format(string,sizeof(string),"ID: %i | Model: %s | Tank:%i",i,getVehicleName(i),tank[i]);
@@ -894,7 +894,7 @@ return 1;
 CMD:credits(playerid,params[])
 {
 SendClientMessage(playerid,COLOR_HGREEN,"[__________ Testserver __________]");
-SendClientMessage(playerid,COLOR_HRED,"Gegründet von: "#SERVEROWNER ".");
+SendClientMessage(playerid,COLOR_HRED,"Gegrï¿½ndet von: "#SERVEROWNER ".");
 SendClientMessage(playerid,COLOR_HRED,"Entwickler: "#SERVEROWNER ".");
 SendClientMessage(playerid,COLOR_HRED," ");
 SendClientMessage(playerid,COLOR_GREY,"* Danke an alle Tester und Helfer.");
@@ -924,7 +924,7 @@ CMD:clear(playerid,params[])
 	if(GetPlayerWantedLevel(playerid)==0)return SendClientMessage(playerid,COLOR_RED,"FEHLER: {FFFFFF}Der Spieler wird nicht gesucht!");
 	new string[128];
 
-	format(string,sizeof(string),"HQ: An alle Einheiten: Verdächtiger %s wurde von %s freigestellt!",getPlayerName(pID),getPlayerName(playerid));
+	format(string,sizeof(string),"HQ: An alle Einheiten: Verdï¿½chtiger %s wurde von %s freigestellt!",getPlayerName(pID),getPlayerName(playerid));
 	SendClientMessage(playerid,COLOR_HBLUE,"INFO: Deine Akten wurden gereinigt.");
 	SetPlayerWantedLevel(pID,0);
 	sInfo[playerid][pwanteds]=0;
@@ -977,7 +977,7 @@ if(IsPlayerInRangeOfPoint(playerid,10.0,1038.0804,-1339.8496,13.7343)&& isPlayer
 	sInfo[playerid][pdonut] = sInfo[playerid][pdonut]+anzahl;
 	preis = anzahl*7;
     if(GetPlayerMoney(playerid)< preis)return SendClientMessage(playerid,COLOR_RED,"FEHLER: {FFFFFF}Du hast nicht genug Geld dabei.");
- 	format(string,sizeof(string),"* Du hast %i Donut(s) für $%i gekauft. (Donuts im Inventar: %i)",anzahl,preis,sInfo[playerid][pdonut]);
+ 	format(string,sizeof(string),"* Du hast %i Donut(s) fï¿½r $%i gekauft. (Donuts im Inventar: %i)",anzahl,preis,sInfo[playerid][pdonut]);
 	SendClientMessage(playerid,COLOR_YELLOW,string);
 	SetPlayerMoney(playerid,GetPlayerMoney(playerid)-preis);
 		}
@@ -1004,7 +1004,7 @@ CMD:use(playerid,params[])
 	sInfo[playerid][pdonut]--;
  	GetPlayerPos(playerid, x,y,z);
     SendClientMessage(playerid,COLOR_GREY,"Du hast einen Donut gegessen (+80hp)!");
-    for(new i = 0, j = MAX_PLAYERS; i <= j; i++) //GetPlayerPoolSize ist die höchste online playerid   | i repräsentiert die aktuelle id die gecheckt wird
+    for(new i = 0, j = MAX_PLAYERS; i <= j; i++) //GetPlayerPoolSize ist die hï¿½chste online playerid   | i reprï¿½sentiert die aktuelle id die gecheckt wird
     {
         if(IsPlayerInRangeOfPoint(i, 7.0, x, y, z))
         {
@@ -1019,7 +1019,7 @@ CMD:use(playerid,params[])
 	}
     GetPlayerPos(playerid, x,y,z);
     SendClientMessage(playerid,COLOR_GREY,"Du hast einen Donut gegessen (+80hp)!");
-    for(new i = 0, j = MAX_PLAYERS; i <= j; i++) //GetPlayerPoolSize ist die höchste online playerid   | i repräsentiert die aktuelle id die gecheckt wird
+    for(new i = 0, j = MAX_PLAYERS; i <= j; i++) //GetPlayerPoolSize ist die hï¿½chste online playerid   | i reprï¿½sentiert die aktuelle id die gecheckt wird
     {
         if(IsPlayerInRangeOfPoint(i, 7.0, x, y, z))
         {
@@ -1035,12 +1035,12 @@ CMD:use(playerid,params[])
 	//green
  	if(!strcmp(item, "green", true))
 	{
-	if(sInfo[playerid][pgreen] < 2)return SendClientMessage(playerid, COLOR_RED,"FEHLER: {FFFFFF}Du benötigst mindestens 2g Green.");
+	if(sInfo[playerid][pgreen] < 2)return SendClientMessage(playerid, COLOR_RED,"FEHLER: {FFFFFF}Du benï¿½tigst mindestens 2g Green.");
     new Float:x, Float:y, Float:z;
     GetPlayerPos(playerid, x,y,z);
     GetPlayerHealth(playerid,health);
     if(health > 80)return SendClientMessage(playerid,COLOR_GREY,"Du kannst Hawaiian Green erst ab 80HP nutzen.");
-    for(new i = 0, j = MAX_PLAYERS; i <= j; i++) //GetPlayerPoolSize ist die höchste online playerid   | i repräsentiert die aktuelle id die gecheckt wird
+    for(new i = 0, j = MAX_PLAYERS; i <= j; i++) //GetPlayerPoolSize ist die hï¿½chste online playerid   | i reprï¿½sentiert die aktuelle id die gecheckt wird
     {
         if(IsPlayerInRangeOfPoint(i, 7.0, x, y, z))
         {
@@ -1060,7 +1060,7 @@ CMD:use(playerid,params[])
     GetPlayerPos(playerid, x,y,z);
     GetPlayerHealth(playerid,health);
     if(health > 100)return SendClientMessage(playerid,COLOR_GREY,"Du kannst keine Drogen nehmen, da du 100HP hast.");
-    for(new i = 0, j = MAX_PLAYERS; i <= j; i++) //GetPlayerPoolSize ist die höchste online playerid   | i repräsentiert die aktuelle id die gecheckt wird
+    for(new i = 0, j = MAX_PLAYERS; i <= j; i++) //GetPlayerPoolSize ist die hï¿½chste online playerid   | i reprï¿½sentiert die aktuelle id die gecheckt wird
     {
         if(IsPlayerInRangeOfPoint(i, 7.0, x, y, z))
         {
@@ -1153,7 +1153,7 @@ CMD:annehmen(playerid,params[])
 CMD:spawnchange(playerid, params[])
 {
 ShowPlayerDialog(playerid,DIALOG_SPAWNCHANGE,DIALOG_STYLE_LIST,"Spawnchange","Eigene Fraktion\nEigenes Haus\nNoobspawn\nAktuelle Position","Weiter","Abbrechen");
-SendClientMessage(playerid,COLOR_YELLOW,"SPAWNCHANGE: {FFFFFF}Wähle deinen Spawn aus.");
+SendClientMessage(playerid,COLOR_YELLOW,"SPAWNCHANGE: {FFFFFF}Wï¿½hle deinen Spawn aus.");
 return 1;
 }
 
@@ -1310,7 +1310,7 @@ if(!strcmp(item,"mhaube",false))
 		SendClientMessage(playerid,COLOR_GREY,"INFO: Motohaube geschlossen.");
 		}else{
 		tmp_bonnet = true;
-		SendClientMessage(playerid,COLOR_GREY,"INFO: Motorhaube geöffnet.");
+		SendClientMessage(playerid,COLOR_GREY,"INFO: Motorhaube geï¿½ffnet.");
 		}
 	SetVehicleParamsEx(vID,tmp_engine, tmp_lights, tmp_alarm, tmp_doors, tmp_bonnet, tmp_boot, tmp_objective);
 
@@ -1335,7 +1335,7 @@ if(!strcmp(item,"kraum",false))
 	if(tmp_boot == false){
 	tmp_boot=true;
 	SetVehicleParamsEx(vID, tmp_engine, tmp_lights,tmp_alarm,tmp_doors,tmp_bonnet,tmp_boot,tmp_objective);
-   	SendClientMessage(playerid,COLOR_GREY,"Kofferraum geöffnet.");}
+   	SendClientMessage(playerid,COLOR_GREY,"Kofferraum geï¿½ffnet.");}
 	else{
 	if(tmp_boot == true){
 	tmp_boot = false;
@@ -1410,7 +1410,7 @@ public OnPlayerExitVehicle(playerid, vehicleid)
 		SetPVarInt(playerid,"trash_job",0);
 		DestroyVehicle(GetPVarInt(playerid,"trash_car"));
 		DisablePlayerCheckpoint(playerid);
-		SendClientMessage(playerid,COLOR_YELLOW,"MÜLLMANN: {FFFFFF}Route beendet.");
+		SendClientMessage(playerid,COLOR_YELLOW,"Mï¿½LLMANN: {FFFFFF}Route beendet.");
 	}
 	if(GetPVarInt(playerid,"bus_job"))
 	{
@@ -1485,7 +1485,7 @@ public OnPlayerEnterCheckpoint(playerid)
 {
 if(GetPVarInt(playerid, "trash_job"))
 	{
-	    //Wenn trash job ausgeführt wird
+	    //Wenn trash job ausgefï¿½hrt wird
 		new cID = GetPVarInt(playerid, "trash_cp");
 		if(IsPlayerInRangeOfPoint(playerid, 5, tCPs[cID][t_x], tCPs[cID][t_y], tCPs[cID][t_z]))
 		{
@@ -1507,7 +1507,7 @@ if(GetPVarInt(playerid, "trash_job"))
 	}
 if(GetPVarInt(playerid, "bus_job"))
 	{
-	    //Wenn trash job ausgeführt wird
+	    //Wenn trash job ausgefï¿½hrt wird
 		new cID = GetPVarInt(playerid, "bus_cp");
 		if(IsPlayerInRangeOfPoint(playerid, 5, bCPs[cID][bj_x], bCPs[cID][bj_y], bCPs[cID][bj_z]))
 		{
@@ -1620,7 +1620,7 @@ if(newkeys & KEY_NO)
 	SetPlayerInterior(playerid,3);
 	}
 
-	//häuser
+	//hï¿½user
 	for(new i=0; i<sizeof(hInfo); i++)
 	{
 	if(!hInfo[i][h_id])continue;
@@ -1653,7 +1653,7 @@ if(newkeys & KEY_NO)
 	SetPlayerInterior(playerid,0);
 
 	 }
-//häuser
+//hï¿½user
 	for(new i=0; i<sizeof(hInfo); i++)
 	{
 		if(GetPlayerVirtualWorld(playerid) !=i)continue;
@@ -1869,7 +1869,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 		    if(listitem==1){
  			SetPlayerColor(playerid, COLOR_RED);
             GetPlayerName(playerid, name, sizeof(name));
-            format(string, sizeof(string), "SERVER: %s {FFFFFF}ist nun als Großmogul im Dienst.", name);
+            format(string, sizeof(string), "SERVER: %s {FFFFFF}ist nun als Groï¿½mogul im Dienst.", name);
             if(!isaduty(playerid)){
 			SendClientMessageToAll(COLOR_RED, string);
 			SetPVarInt(playerid,"aduty",1);
@@ -1886,7 +1886,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
    			if(listitem==2){
  			SetPlayerColor(playerid, COLOR_RED);
             GetPlayerName(playerid, name, sizeof(name));
-            format(string, sizeof(string), "SERVER: %s {FFFFFF}ist nun als größte Instanz des Servers im Dienst.", name);
+            format(string, sizeof(string), "SERVER: %s {FFFFFF}ist nun als grï¿½ï¿½te Instanz des Servers im Dienst.", name);
             if(!isaduty(playerid)){
 			SendClientMessageToAll(COLOR_RED, string);
 			SetPVarInt(playerid,"aduty",1);
@@ -1988,7 +1988,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 	        {
 	            //Kleiner als 4 Zeichen
 	            SendClientMessage(playerid,COLOR_RED,"Dein Passwort muss mindestens 4 Zeichen lang sein.");
-	            ShowPlayerDialog(playerid,DIALOG_REGISTER,DIALOG_STYLE_INPUT,"Registrierung","Gib bitte dein gewünschtes Passwort an:","Okay","Abbrechen");
+	            ShowPlayerDialog(playerid,DIALOG_REGISTER,DIALOG_STYLE_INPUT,"Registrierung","Gib bitte dein gewï¿½nschtes Passwort an:","Okay","Abbrechen");
 	        }
 	    }
 	    else
@@ -2013,35 +2013,35 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 			if(listitem==2)
 			{
 			PlayAudioStreamForPlayer(playerid, stream, 0.0,0.0,0.0, 1);
-			SendClientMessage(playerid,COLOR_HGREEN,"Du hast das Radio angeschaltet. Viel Spaß beim Hören!");
+			SendClientMessage(playerid,COLOR_HGREEN,"Du hast das Radio angeschaltet. Viel Spaï¿½ beim Hï¿½ren!");
 			SetPVarInt(playerid,"streamon",1);
 			return 1;
 			}
 			if(listitem==1)
 			{
 			PlayAudioStreamForPlayer(playerid,"http://radio.breakz.fm/listen.pls",0.0,0.0,0.0, 1);
-			SendClientMessage(playerid,COLOR_HGREEN,"Du hast das Radio angeschaltet. Viel Spaß beim Hören!");
+			SendClientMessage(playerid,COLOR_HGREEN,"Du hast das Radio angeschaltet. Viel Spaï¿½ beim Hï¿½ren!");
 			SetPVarInt(playerid,"streamon",1);
 			return 1;
 			}
 			if(listitem==3)
 			{
 			PlayAudioStreamForPlayer(playerid,"http://stream.ffn.de/radiobollerwagen/mp3-192",0.0,0.0,0.0, 1);
-			SendClientMessage(playerid,COLOR_HGREEN,"Du hast das Radio angeschaltet. Viel Spaß beim Hören!");
+			SendClientMessage(playerid,COLOR_HGREEN,"Du hast das Radio angeschaltet. Viel Spaï¿½ beim Hï¿½ren!");
 			SetPVarInt(playerid,"streamon",1);
 			return 1;
 			}
 			if(listitem==4)
 			{
 			PlayAudioStreamForPlayer(playerid,"	https://wdr-1live-live.icecastssl.wdr.de/wdr/1live/live/mp3/128/stream.mp3",0.0,0.0,0.0, 1);
-			SendClientMessage(playerid,COLOR_HGREEN,"Du hast das Radio angeschaltet. Viel Spaß beim Hören!");
+			SendClientMessage(playerid,COLOR_HGREEN,"Du hast das Radio angeschaltet. Viel Spaï¿½ beim Hï¿½ren!");
   			SetPVarInt(playerid,"streamon",1);
 			return 1;
 			}
 			if(listitem==5)
 			{
 			PlayAudioStreamForPlayer(playerid, "https://streams.ilovemusic.de/iloveradio8.mp3",0.0,0.0,0.0, 1);
-			SendClientMessage(playerid,COLOR_HGREEN,"Du hast das Radio angeschaltet. Viel Spaß beim Hören!");
+			SendClientMessage(playerid,COLOR_HGREEN,"Du hast das Radio angeschaltet. Viel Spaï¿½ beim Hï¿½ren!");
   			SetPVarInt(playerid,"streamon",1);
 			return 1;
 			}
@@ -2269,7 +2269,7 @@ CMD:trade(playerid,params[])
 }
 CMD:nichts(playerid,params[])
 {
-SendClientMessage(playerid,0xFF9A00FF,"{35793B}GLÜCKWUNSCH: Dieser Befehl macht garnichts!");
+SendClientMessage(playerid,0xFF9A00FF,"{35793B}GLï¿½CKWUNSCH: Dieser Befehl macht garnichts!");
 return 1;
 }
 /*

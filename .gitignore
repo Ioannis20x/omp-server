@@ -9,3 +9,4 @@ libmariadb.dll
 log-core.dll
 omp-server.exe
 omp-server.pdb
+server.cfg
