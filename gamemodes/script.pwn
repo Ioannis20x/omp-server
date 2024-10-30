@@ -39,11 +39,12 @@
 
 new MySQL:dbhandle;
 
-print(dbhandle);
+
 main()
 {
 	print("Ioannis Testserver");
 	print("Copyright (c) 2019 by Ioannis20x - Alle Rechte vorbehalten.\n");
+	print(dbhandle);
 }
 
 //UTILS
