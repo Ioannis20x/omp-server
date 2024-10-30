@@ -11,7 +11,7 @@ stock saveFrakCarToDB(frakid,carid)
 stock isPlayerInFrakVehicle(playerid,f_id)
 {
 	new vID = GetPlayerVehicleID(playerid);
-	if(cInfo[vID][fraktion)==f_id)return 1;
+	if(cInfo[vID][fraktion]==f_id)return 1;
 	return 0;
 }
 
@@ -34,7 +34,7 @@ stock createfCar(playerid,modelid,Float:x,Float:y,Float:z,Float:r,cl1,cl2)
 	    cInfo[i][id_x] = CreateVehicle(modelid,x,y,z,r,cl1,cl2,0);
 	    tank[cInfo[i][id_x]] = 100;
 	    new string[128];
-	    format(string,sizeof(string),"Das Auto cInfo[%i] wurde erstellt für die Fraktion %s erstellt.",modelid,fInfo[cInfo[i][fraktion]][f_name]);
+	    format(string,sizeof(string),"Das Auto cInfo[%i] wurde erstellt fÃ¼r die Fraktion %s erstellt.",modelid,fInfo[cInfo[i][fraktion]][f_name]);
 	    SendClientMessage(playerid,COLOR_RED,string);
 
 	    return 1;
